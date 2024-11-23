@@ -1,0 +1,2695 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Di Tích Lịch Sử Tỉnh Trà Vinh</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+</head>
+
+<body class="bg-gray-100">
+    <!-- Header với logo -->
+    <header class="bg-white shadow-lg transition-all duration-300 hover:shadow-xl">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo và tên trường -->
+                <div class="flex items-center">
+                    <img src="logodhtravinh.png" alt="Logo Trà Vinh" 
+                         class="h-16 w-auto object-contain hover:scale-105 transition-transform duration-300">
+                    <div class="ml-4">
+                        <h1 class="text-2xl font-bold text-red-600 hover:text-red-700 transition-colors">
+                            TRƯỜNG ĐẠI HỌC TRÀ VINH
+                        </h1>
+                        <p class="text-gray-600">
+                            <i class="far fa-clock mr-2"></i>
+                            <span id="currentDateTime">Thứ 2 - 26/10/2024, 10:37:23 PM</span>
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Menu chính -->
+                <nav id="mobileMenu" class="hidden md:flex w-full md:w-auto text-black py-4 rounded-lg">
+                    <div class="container mx-auto">
+                        <ul class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6 text-lg font-semibold">
+                            <li><a href="index.html" class="block hover:text-blue-600 transition-colors">TRANG CHỦ</a></li>
+                            <li><a href="Gioi-thieu.html" class="block hover:text-blue-600 transition-colors">GIỚI THIỆU</a></li>
+                            <li><a href="di-tich-quoc-gia.html" class="block hover:text-blue-600 transition-colors">Di Tích Cấp Quốc Gia</a></li>
+                            <li><a href="di-tich-tinh.html" class="block hover:text-blue-600 transition-colors">Di Tích Cấp Tỉnh</a></li>
+                            <li><a href="dulich.html" class="block hover:text-blue-600 transition-colors">Du Lịch</a></li>
+                            <li><a href="lich-su.html" class="block hover:text-blue-600 transition-colors">Lịch Sử</a></li>
+                            <li><a href="lien-he.html" class="block hover:text-blue-600 transition-colors">Liên Hệ</a></li>
+                        </ul>
+                    </div>
+                </nav>
+                
+                
+                <!-- Thêm các nút mạng xã hội -->
+                <div class="hidden md:flex space-x-4">
+                    <a href="https://www.facebook.com/TraVinhUniversity.TVU?mibextid=JRoKGi" target="_blank" class="text-gray-600 hover:text-blue-600 transition-colors" onclick="window.open(this.href, '_blank'); return false;">
+                        <i class="fab fa-facebook-square text-2xl"></i>
+                    </a>
+                    <a href="https://www.instagram.com/explore/locations/1017118742/truong-ai-hoc-tra-vinh/" target="_blank" class="text-gray-600 hover:text-pink-600 transition-colors" onclick="window.open(this.href, '_blank'); return false;">
+                        <i class="fab fa-instagram text-2xl"></i>
+                    </a>
+                    <a href="https://youtube.com/@aihoctravinhtvu?si=Mky1izWZ7pXRA9Hs" target="_blank" class="text-gray-600 hover:text-red-600 transition-colors" onclick="window.open(this.href, '_blank'); return false;">
+                        <i class="fab fa-youtube text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Banner chính - thêm hiệu ứng và cải thiện giao diện -->
+    <div class="container mx-auto mt-4">
+        <div class="relative overflow-hidden rounded-lg shadow-2xl">
+            <!-- Slideshow container -->
+            <div class="relative h-[480px]" id="slideshow">
+                <img src="logotravinh.png" alt="Logo Trường Đại học Trà Vinh" 
+                     class="w-full h-full object-contain transition-transform duration-700 hover:scale-105">
+                <!-- Thêm nhiều ảnh khác vào slideshow -->
+                <img src="logotravinh2.jpg" alt="Cổng chào Trường Đại học Trà Vinh" 
+                     class="absolute top-0 left-0 w-full h-full object-contain opacity-0 transition-opacity duration-700">
+                <img src="chùa.jpg" alt="Chùa Âng - Di tích văn hóa Trà Vinh" 
+                     class="absolute top-0 left-0 w-full h-full object-contain opacity-0 transition-opacity duration-700">
+            </div>
+    
+    
+            <!-- Overlay với gradient đẹp hơn -->
+            <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-gray-900/70 via-gray-900/50 to-transparent">
+                <div class="p-8 max-w-2xl">
+                    <h2 class="text-4xl font-bold text-white mb-4 animate-fade-in">
+                        Trang Web Giới Thiệu Các Di Tích Tỉnh Trà Vinh
+                    </h2>
+                    <p class="text-white/90 text-lg animate-fade-in-delay">
+                        Khám phá vẻ đẹp và giá trị lịch sử của các di tích văn hóa tại Trà Vinh
+                    </p>
+                    <!-- Thêm nút CTA -->
+                    <div class="relative">
+                        <button onclick="toggleContent()" class="mt-8 px-8 py-4 bg-yellow-500 text-black font-bold rounded-full 
+                                     hover:bg-yellow-400 transition-all duration-300 
+                                     transform hover:scale-105 animate-fade-in-delay-2 
+                                     shadow-lg hover:shadow-xl text-lg">
+                            Khám Phá Ngay
+                        </button>
+                        
+                        <!-- Nội dung hiện ra khi click -->
+                        <div id="content" class="absolute left-0 mt-2 w-80 bg-white rounded-lg shadow-xl opacity-0
+                                  transition-opacity duration-300 p-4">
+                                  <h3 class="text-lg font-semibold text-gray-800 mb-2">Khám Phá Di Sản Trà Vinh</h3>
+                                  <ul class="text-gray-600 space-y-2">
+                                      <li class="hover:text-blue-600 cursor-pointer flex items-center justify-between">
+                                          <span>• Di tích lịch sử văn hóa</span>
+                                          <i class="fas fa-chevron-right cursor-pointer" onclick="toggleSubContent('ditich', this)"></i>
+                                          <div id="ditich" class="absolute left-full top-0 ml-2 w-96 bg-white rounded-lg shadow-xl p-4 hidden">
+                                              <h4 class="font-semibold mb-2">Di tích lịch sử văn hóa</h4>
+                                              <p>Khám phá các di tích lịch sử như chùa Âng, Ao Bà Om, và nhiều di tích khác mang đậm bản sắc văn hóa Trà Vinh.</p>
+                                          </div>
+                                      </li>
+                                      <li class="hover:text-blue-600 cursor-pointer flex items-center justify-between">
+                                          <span>• Kiến trúc cổ độc đáo</span>
+                                          <i class="fas fa-chevron-right cursor-pointer" onclick="toggleSubContent('kientruc', this)"></i>
+                                          <div id="kientruc" class="absolute left-full top-0 ml-2 w-96 bg-white rounded-lg shadow-xl p-4 hidden">
+                                              <h4 class="font-semibold mb-2">Kiến trúc cổ độc đáo</h4>
+                                              <p>Chiêm ngưỡng những công trình kiến trúc cổ độc đáo mang đậm dấu ấn văn hóa Khmer, Việt, Hoa.</p>
+                                          </div>
+                                      </li>
+                                      <li class="hover:text-blue-600 cursor-pointer flex items-center justify-between">
+                                          <span>• Văn hóa dân tộc đa dạng</span>
+                                          <i class="fas fa-chevron-right cursor-pointer" onclick="toggleSubContent('vanhoa', this)"></i>
+                                          <div id="vanhoa" class="absolute left-full top-0 ml-2 w-96 bg-white rounded-lg shadow-xl p-4 hidden">
+                                              <h4 class="font-semibold mb-2">Văn hóa dân tộc đa dạng</h4>
+                                              <p>Tìm hiểu về văn hóa đa dạng của các dân tộc Khmer, Kinh, Hoa cùng chung sống tại Trà Vinh.</p>
+                                          </div>
+                                      </li>
+                                      <li class="hover:text-blue-600 cursor-pointer flex items-center justify-between">
+                                          <span>• Lễ hội truyền thống</span>
+                                          <i class="fas fa-chevron-right cursor-pointer" onclick="toggleSubContent('lehoi', this)"></i>
+                                          <div id="lehoi" class="absolute left-full top-0 ml-2 w-96 bg-white rounded-lg shadow-xl p-4 hidden">
+                                              <h4 class="font-semibold mb-2">Lễ hội truyền thống</h4>
+                                              <p>Khám phá các lễ hội truyền thống đặc sắc như Ok Om Bok, Sene Dolta và nhiều lễ hội văn hóa khác.</p>
+                                          </div>
+                                      </li>
+                                  </ul>
+                        </div>
+                        <script>
+                            function toggleSubContent(id, icon) {
+                                const content = document.getElementById(id);
+                                const allContents = document.querySelectorAll('[id^="ditich"], [id^="kientruc"], [id^="vanhoa"], [id^="lehoi"]');
+                                
+                                // Ẩn tất cả các nội dung khác
+                                allContents.forEach(item => {
+                                    if(item.id !== id) {
+                                        item.classList.add('hidden');
+                                    }
+                                });
+                                
+                                // Hiển thị/ẩn nội dung được chọn
+                                content.classList.toggle('hidden');
+                            }
+                            </script>
+  
+                          
+                          <script>
+                              function toggleContent() {
+                                  const content = document.getElementById('content');
+                                  if(content.style.opacity === '1') {
+                                      content.style.opacity = '0';
+                                      content.style.pointerEvents = 'none';
+                                  } else {
+                                      content.style.opacity = '1';
+                                      content.style.pointerEvents = 'auto';
+                                  }
+                              }
+                          </script>
+                      </div>
+                  </div>
+              </div>
+      
+              <!-- Thêm điều khiển slideshow -->
+              <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                  <button class="w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-colors"></button>
+                  <button class="w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-colors"></button>
+                  <button class="w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-colors"></button>
+              </div>
+          </div>
+      </div>
+    <!-- Thêm script cho slideshow và đồng hồ -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Cập nhật thời gian thực
+        function updateDateTime() {
+            const now = new Date();
+            const options = { 
+                weekday: 'long', 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
+            };
+            document.getElementById('currentDateTime').textContent = 
+                now.toLocaleDateString('vi-VN', options);
+        }
+        setInterval(updateDateTime, 1000);
+        updateDateTime();
+    
+        // Slideshow tự động
+        const slides = document.querySelectorAll('#slideshow img');
+        let currentSlide = 0;
+    
+        function nextSlide() {
+            slides[currentSlide].style.opacity = '0';
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].style.opacity = '1';
+        }
+    
+        setInterval(nextSlide, 5000);
+    });
+    </script>
+    
+    <!-- Thêm styles cho animation -->
+    <style>
+    .animate-fade-in {
+        animation: fadeIn 1s ease-out;
+    }
+    .animate-fade-in-delay {
+        animation: fadeIn 1s ease-out 0.5s both;
+    }
+    .animate-fade-in-delay-2 {
+        animation: fadeIn 1s ease-out 1s both;
+    }
+    
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    </style>
+     <div class="flex justify-center">
+        <div class="relative">
+            <input type="text" id="searchInput" placeholder="Tìm kiếm di tích lịch sử..." 
+                   class="bg-white text-gray-800 rounded-full py-2 px-4 w-96 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <button onclick="searchLocations()" class="absolute right-0 top-0 mt-2 mr-3">
+                <i class="fas fa-search text-gray-600"></i>
+            </button>
+        </div>
+    </div>
+    <script>
+        function searchLocations() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const diTichElements = document.getElementsByClassName('bg-white');
+            let found = false;
+            let resultCount = 0;
+            
+            // Xóa highlight cũ
+            const highlights = document.querySelectorAll('.bg-yellow-200');
+            highlights.forEach(el => {
+                const parent = el.parentNode;
+                parent.replaceChild(document.createTextNode(el.textContent), el);
+            });
+
+            // Xóa thông báo cũ nếu có
+            const existingMessage = document.getElementById('searchResultMessage');
+            if (existingMessage) {
+                existingMessage.remove();
+            }
+
+            // Nếu không có từ khóa tìm kiếm, hiển thị lại tất cả
+            if (searchTerm === '') {
+                for (let element of diTichElements) {
+                    element.style.display = '';
+                }
+                return;
+            }
+
+            // Tạo div để hiển thị kết quả tìm kiếm
+            const searchResults = document.createElement('div');
+            searchResults.id = 'searchResults';
+            searchResults.className = 'mt-4 p-4 bg-white rounded-lg shadow-md';
+
+            // Tìm kiếm và hiển thị kết quả
+            for (let element of diTichElements) {
+                const tenDiTich = element.querySelector('h3')?.textContent.toLowerCase() || '';
+                const diaChiElement = element.querySelector('.text-sm.text-gray-600');
+                const diaChi = diaChiElement ? diaChiElement.textContent.toLowerCase() : '';
+                const moTa = element.querySelector('p.text-gray-700')?.textContent.toLowerCase() || '';
+                const chiTiet = element.querySelector('.hidden')?.textContent.toLowerCase() || '';
+                
+                if (tenDiTich.includes(searchTerm) || 
+                    diaChi.includes(searchTerm) || 
+                    moTa.includes(searchTerm) || 
+                    chiTiet.includes(searchTerm)) {
+                    element.style.display = '';
+                    found = true;
+                    resultCount++;
+                    
+                    // Tạo kết quả tìm kiếm
+                    const resultItem = document.createElement('div');
+                    resultItem.className = 'mb-4 p-3 border-b border-gray-200';
+                    resultItem.innerHTML = `
+                        <h4 class="font-semibold text-blue-700">${element.querySelector('h3').textContent}</h4>
+                        <p class="text-sm text-gray-600">${diaChiElement.textContent}</p>
+                        <p class="text-gray-700">${element.querySelector('p.text-gray-700').textContent}</p>
+                    `;
+                    searchResults.appendChild(resultItem);
+                    
+                    highlightText(element, searchTerm);
+                    
+                    // Hiển thị chi tiết khi tìm thấy
+                    const detailsId = element.querySelector('button[onclick]')?.getAttribute('onclick')?.match(/'([^']+)'/)?.[1];
+                    if (detailsId) {
+                        const details = document.getElementById(detailsId);
+                        if (details) {
+                            details.classList.remove('hidden');
+                            const icon = document.getElementById(detailsId.replace('details', 'icon'));
+                            if (icon) icon.style.transform = 'rotate(180deg)';
+                        }
+                    }
+                } else {
+                    element.style.display = 'none';
+                }
+            }
+
+            // Hiển thị thông báo kết quả
+            const message = document.createElement('div');
+            message.id = 'searchResultMessage';
+            message.className = 'text-center mt-4 text-gray-600 animate-fade-in';
+            
+            if (found) {
+                message.innerHTML = `
+                    <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                    Đã tìm thấy ${resultCount} di tích tương ứng với từ khóa "${searchTerm}"
+                    <div class="text-sm mt-2">Các kết quả được highlight màu vàng</div>
+                    <div class="text-sm mt-1">Chi tiết di tích đã được tự động mở rộng</div>
+                `;
+                // Thêm kết quả tìm kiếm vào sau thông báo
+                message.appendChild(searchResults);
+            } else {
+                message.innerHTML = `
+                    <i class="fas fa-exclamation-circle text-red-500 mr-2"></i>
+                    Không tìm thấy di tích tương ứng với từ khóa "${searchTerm}"<br>
+                    <span class="text-sm">Vui lòng thử lại với từ khóa khác</span>
+                `;
+            }
+            document.querySelector('.relative').parentNode.appendChild(message);
+        }
+
+        function highlightText(element, searchTerm) {
+            const textNodes = [];
+            const walk = document.createTreeWalker(
+                element,
+                NodeFilter.SHOW_TEXT,
+                null,
+                false
+            );
+
+            let node;
+            while (node = walk.nextNode()) {
+                textNodes.push(node);
+            }
+
+            textNodes.forEach(node => {
+                const text = node.textContent.toLowerCase();
+                if (text.includes(searchTerm)) {
+                    const span = document.createElement('span');
+                    span.className = 'bg-yellow-200';
+                    span.textContent = node.textContent;
+                    node.parentNode.replaceChild(span, node);
+                }
+            });
+        }
+
+        document.getElementById('searchInput').addEventListener('keyup', function(event) {
+            if (event.key === 'Enter') {
+                searchLocations();
+            }
+        });
+    </script>
+</div>
+</div>
+</nav>
+            
+
+
+        <section id="di-tich-quoc-gia" class="container mx-auto px-4 py-12 bg-gray-100">
+            <h2 class="text-4xl font-bold text-center text-blue-800 mb-12">Di tích cấp Quốc gia tại Trà Vinh</h2>
+            <div class="flex flex-wrap -mx-4">
+                <!-- Card 1: Ao Ba Om -->
+                <div class="w-full sm:w-1/3 lg:w-1/3 px-4 mb-8">
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <img src="ditichquocgia/aobaom.jpg" alt="Ao Ba Om" class="w-full h-80 object-cover mb-4 rounded shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <h3 class="text-xl font-semibold text-blue-700 mb-3">Ao Ba Om</h3>
+                        <p class="text-gray-700 mb-4">Ao Ba Om được hình thành vào thế kỷ thứ 10, theo truyền thuyết do bà Om - một phụ nữ người Khmer đào nên.</p>
+
+                        <div class="text-sm text-gray-600">
+                            <p><i class="fas fa-map-marker-alt mr-2"></i>Phường 8, TP. Trà Vinh</p>
+                            <p><i class="far fa-calendar-alt mr-2"></i>Thành lập: Thế kỷ 10</p>
+                            <p><i class="fas fa-award mr-2"></i>Công nhận di tích: 02/12/1994</p>
+                        </div>
+
+                        <button onclick="toggleDetails('aobaom-details')" class="mt-4 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full transition duration-300 flex items-center justify-center gap-2">
+                            <span>Xem chi tiết</span>
+                            <i class="fas fa-chevron-down transition-transform duration-300" id="aobaom-icon"></i>
+                        </button>
+
+                        <div id="aobaom-details" class="mt-4 bg-gray-50 p-4 rounded-lg transition-all duration-300 hidden">
+                            <h4 class="font-semibold text-lg mb-2">Lịch sử hình thành</h4>
+                            <p class="text-gray-700 mb-3">Ao Ba Om được hình thành vào thế kỷ thứ 10, theo truyền thuyết do bà Om - một phụ nữ người Khmer đào nên. Ban đầu ao được đào để trữ nước phục vụ sinh hoạt và tưới tiêu.</p>
+
+                            <h4 class="font-semibold text-lg mb-2">Giá trị văn hóa</h4>
+                            <p class="text-gray-700 mb-3">
+                                <ul class="list-disc ml-6">
+                                    <li>Trung tâm văn hóa Khmer</li>
+                                    <li>Nơi diễn ra lễ hội Ok Om Bok</li>
+                                    <li>Điểm tổ chức lễ hội truyền thống</li>
+                                    <li>Công trình thủy lợi cổ</li>
+                                </ul>
+                            </p>
+
+                            <h4 class="font-semibold text-lg mb-2">Giá trị lịch sử</h4>
+                            <p class="text-gray-700 mb-3">
+                                <ul class="list-disc ml-6">
+                                    <li>Di tích văn hóa cấp quốc gia</li>
+                                    <li>Chứng tích lịch sử Khmer</li>
+                                    <li>Nơi lưu giữ văn hóa truyền thống</li>
+                                    <li>Điểm son văn hóa tâm linh</li>
+                                </ul>
+                            </p>
+
+                            <h4 class="font-semibold text-lg mb-2">Tiện ích tham quan</h4>
+                            <div class="grid grid-cols-2 gap-4 text-gray-700">
+                                <div>
+                                    <h5 class="font-medium mb-2">Dịch vụ</h5>
+                                    <ul class="list-disc ml-6">
+                                        <li>Hướng dẫn tham quan</li>
+                                        <li>Khu vui chơi giải trí</li>
+                                        <li>Không gian xanh mát</li>
+                                        <li>Bãi đỗ xe</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h5 class="font-medium mb-2">Thông tin hữu ích</h5>
+                                    <ul class="list-disc ml-6">
+                                        <li>Mở cửa: 6:00 - 18:00</li>
+                                        <li>Thuyết minh đa ngôn ngữ</li>
+                                        <li>Tham quan miễn phí</li>
+                                        <li>Chụp ảnh tự do</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="mt-4">
+                                <!-- Bản đồ -->
+                                <div class="mb-4 h-64 rounded-lg overflow-hidden">
+                                    <iframe 
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3928.841454392438!2d106.34573661474199!3d10.033297892830387!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDAxJzU5LjkiTiAxMDbCsDIwJzQ0LjYiRQ!5e0!3m2!1svi!2s!4v1635789012345!5m2!1svi!2s"
+                                        class="w-full h-full border-0"
+                                        allowfullscreen=""
+                                        loading="lazy">
+                                    </iframe>
+                                </div>
+
+                                <!-- Nút chỉ đường và đặt lịch -->
+                                <div class="flex gap-4">
+                                    <button onclick="window.open('https://www.google.com/maps/dir//10.033297,106.345736')" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-full flex items-center gap-2">
+                                        <i class="fas fa-map-marked-alt"></i>
+                                        Chỉ đường
+                                    </button>
+                                    
+                                    <button onclick="showBookingForm()" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-full flex items-center gap-2">
+                                        <i class="fas fa-calendar-alt"></i>
+                                        Đặt lịch tham quan
+                                    </button>
+                                </div>
+
+                                <!-- Form đặt lịch -->
+                                <div id="bookingForm" class="hidden mt-4 p-4 bg-gray-100 rounded-lg">
+                                    <h5 class="font-medium mb-3">Đặt lịch tham quan</h5>
+                                    <form class="space-y-3" onsubmit="return false;">
+                                        <div>
+                                            <label class="block text-sm mb-1">Họ và tên</label>
+                                            <input type="text" class="w-full px-3 py-2 border rounded" placeholder="Nhập họ và tên của bạn" required>
+                                        </div>
+                                        <div>
+                                            <label class="block text-sm mb-1">Email</label>
+                                            <input type="email" class="w-full px-3 py-2 border rounded" placeholder="Nhập email của bạn" required>
+                                        </div>
+                                        <div>
+                                            <label class="block text-sm mb-1">Số điện thoại</label>
+                                            <input type="tel" class="w-full px-3 py-2 border rounded" placeholder="Nhập số điện thoại của bạn" required>
+                                        </div>
+                                        <div>
+                                            <label class="block text-sm mb-1">Ngày tham quan</label>
+                                            <input type="date" class="w-full px-3 py-2 border rounded" required>
+                                        </div>
+                                        <div>
+                                            <label class="block text-sm mb-1">Thời gian</label>
+                                            <select class="w-full px-3 py-2 border rounded" required>
+                                                <option value="">Chọn thời gian</option>
+                                                <option value="morning">Buổi sáng (8:00 - 11:00)</option>
+                                                <option value="afternoon">Buổi chiều (14:00 - 17:00)</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <label class="block text-sm mb-1">Số người tham quan</label>
+                                            <input type="number" min="1" class="w-full px-3 py-2 border rounded" placeholder="Nhập số người tham quan" required>
+                                        </div>
+                                        <div>
+                                            <label class="block text-sm mb-1">Ghi chú thêm</label>
+                                            <textarea class="w-full px-3 py-2 border rounded" rows="3" placeholder="Nhập ghi chú nếu có"></textarea>
+                                        </div>
+                                        <button type="submit" class="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded">
+                                            Xác nhận đặt lịch
+                                        </button>
+                                    </form>
+                                </div>
+                                <script>
+                                    function showBookingForm() {
+                                        const form = document.getElementById('bookingForm');
+                                        if (form.classList.contains('hidden')) {
+                                            form.classList.remove('hidden');
+                                        } else {
+                                            form.classList.add('hidden');
+                                        }
+                                    }
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script>
+                function toggleDetails(id) {
+                    const details = document.getElementById(id);
+                    const icon = document.getElementById(id.replace('details', 'icon'));
+                    
+                    if (details.classList.contains('hidden')) {
+                        details.classList.remove('hidden');
+                        icon.style.transform = 'rotate(180deg)';
+                    } else {
+                        details.classList.add('hidden');
+                        icon.style.transform = 'rotate(0deg)';
+                    }
+                }
+    </script>
+   <!-- Card 2: Chùa BODHICULAMAN -->
+   <div class="w-full sm:w-1/3 lg:w-1/3 px-4 mb-8">
+    <div class="bg-white rounded-lg shadow-md p-6">
+                    <img src="ditichquocgia/BODHICULAMANI.jpg" alt="Chùa BODHICULAMAN" class="w-full h-80 object-cover mb-4 rounded shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-xl font-semibold text-blue-700 mb-3">Chùa BODHICULAMAN</h3>
+                    <p class="text-gray-700 mb-4">Chùa BODHICULAMANI được xây dựng vào năm 1308, là một trong những ngôi chùa Khmer cổ nhất tại Trà Vinh. Ngôi chùa được xây dựng theo kiến trúc truyền thống Khmer với nhiều họa tiết chạm khắc tinh xảo.</p>
+
+                    <div class="text-sm text-gray-600">
+                        <p><i class="fas fa-map-marker-alt mr-2"></i>Xã Đa Lộc, H. Châu Thành</p>
+                        <p><i class="far fa-calendar-alt mr-2"></i>Thành lập: Năm 1308</p>
+                        <p><i class="fas fa-award mr-2"></i>Công nhận di tích: 16/11/2018</p>
+                    </div>
+
+                        <button onclick="toggleDetails('bodhiculamani-details')" class="mt-4 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full transition duration-300 flex items-center justify-center gap-2">
+                            <span>Xem chi tiết</span>
+                            <i class="fas fa-chevron-down transition-transform duration-300" id="bodhiculamani-icon"></i>
+                        </button>
+
+                        <div id="bodhiculamani-details" class="mt-4 bg-gray-50 p-4 rounded-lg transition-all duration-300 hidden">
+                            <h4 class="font-semibold text-lg mb-2">Lịch sử hình thành</h4>
+                            <p class="text-gray-700 mb-3">Chùa BODHICULAMANI được xây dựng vào năm 1308, là một trong những ngôi chùa Khmer cổ nhất tại Trà Vinh. Ngôi chùa được xây dựng theo kiến trúc truyền thống Khmer với nhiều họa tiết chạm khắc tinh xảo.</p>
+
+                            <h4 class="font-semibold text-lg mb-2">Giá trị văn hóa</h4>
+                            <p class="text-gray-700 mb-3">
+                                <ul class="list-disc ml-6">
+                                    <li>Trung tâm văn hóa Phật giáo Khmer</li>
+                                    <li>Kiến trúc độc đáo Nam tông</li>
+                                    <li>Nơi tổ chức lễ hội truyền thống</li>
+                                    <li>Điểm du lịch tâm linh nổi tiếng</li>
+                                </ul>
+                            </p>
+
+                            <h4 class="font-semibold text-lg mb-2">Giá trị lịch sử</h4>
+                            <p class="text-gray-700 mb-3">
+                                <ul class="list-disc ml-6">
+                                    <li>Di tích văn hóa cấp quốc gia</li>
+                                    <li>Chứng tích lịch sử Khmer</li>
+                                    <li>Nơi lưu giữ văn hóa truyền thống</li>
+                                    <li>Điểm son văn hóa tâm linh</li>
+                                </ul>
+                            </p>
+
+                            <h4 class="font-semibold text-lg mb-2">Tiện ích tham quan</h4>
+                            <div class="grid grid-cols-2 gap-4 text-gray-700">
+                                <div>
+                                    <h5 class="font-medium mb-2">Dịch vụ</h5>
+                                    <ul class="list-disc ml-6">
+                                        <li>Hướng dẫn tham quan</li>
+                                        <li>Khu vui chơi giải trí</li>
+                                        <li>Không gian xanh mát</li>
+                                        <li>Bãi đỗ xe</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h5 class="font-medium mb-2">Thông tin hữu ích</h5>
+                                    <ul class="list-disc ml-6">
+                                        <li>Mở cửa: 6:00 - 18:00</li>
+                                        <li>Thuyết minh đa ngôn ngữ</li>
+                                        <li>Tham quan miễn phí</li>
+                                        <li>Chụp ảnh tự do</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="mt-4">
+                                <!-- Bản đồ -->
+                                <div class="mb-4 h-64 rounded-lg overflow-hidden">
+                                    <iframe 
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3928.841454392438!2d106.34573661474199!3d10.033297892830387!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDAxJzU5LjkiTiAxMDbCsDIwJzQ0LjYiRQ!5e0!3m2!1svi!2s!4v1635789012345!5m2!1svi!2s"
+                                        class="w-full h-full border-0"
+                                        allowfullscreen=""
+                                        loading="lazy">
+                                    </iframe>
+                                </div>
+
+                                <!-- Nút chỉ đường và đặt lịch -->
+                                <div class="flex gap-4">
+                                    <button onclick="window.open('https://www.google.com/maps/dir//10.033297,106.345736')" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-full flex items-center gap-2">
+                                        <i class="fas fa-map-marked-alt"></i>
+                                        Chỉ đường
+                                    </button>
+                                    
+                                    <button onclick="showBookingForm2()" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-full flex items-center gap-2">
+                                        <i class="fas fa-calendar-alt"></i>
+                                        Đặt lịch tham quan
+                                    </button>
+                                </div>
+
+                                <!-- Form đặt lịch -->
+                                <div id="bookingForm2 class="hidden mt-4 p-4 bg-gray-100 rounded-lg">
+                                    <h5 class="font-medium mb-3">Đặt lịch tham quan</h5>
+                                    <form class="space-y-3" onsubmit="return false;">
+                                        <div>
+                                            <label class="block text-sm mb-1">Họ và tên</label>
+                                            <input type="text" class="w-full px-3 py-2 border rounded" placeholder="Nhập họ và tên của bạn" required>
+                                        </div>
+                                        <div>
+                                            <label class="block text-sm mb-1">Email</label>
+                                            <input type="email" class="w-full px-3 py-2 border rounded" placeholder="Nhập email của bạn" required>
+                                        </div>
+                                        <div>
+                                            <label class="block text-sm mb-1">Số điện thoại</label>
+                                            <input type="tel" class="w-full px-3 py-2 border rounded" placeholder="Nhập số điện thoại của bạn" required>
+                                        </div>
+                                        <div>
+                                            <label class="block text-sm mb-1">Ngày tham quan</label>
+                                            <input type="date" class="w-full px-3 py-2 border rounded" required>
+                                        </div>
+                                        <div>
+                                            <label class="block text-sm mb-1">Thời gian</label>
+                                            <select class="w-full px-3 py-2 border rounded" required>
+                                                <option value="">Chọn thời gian</option>
+                                                <option value="morning">Buổi sáng (8:00 - 11:00)</option>
+                                                <option value="afternoon">Buổi chiều (14:00 - 17:00)</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <label class="block text-sm mb-1">Số người tham quan</label>
+                                            <input type="number" min="1" class="w-full px-3 py-2 border rounded" placeholder="Nhập số người tham quan" required>
+                                        </div>
+                                        <div>
+                                            <label class="block text-sm mb-1">Ghi chú thêm</label>
+                                            <textarea class="w-full px-3 py-2 border rounded" rows="3" placeholder="Nhập ghi chú nếu có"></textarea>
+                                        </div>
+                                        <button type="submit" class="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded">
+                                            Xác nhận đặt lịch
+                                        </button>
+                                    </form>
+                                </div>
+                                <script>
+                                    function showBookingForm2() {
+                                        const form = document.getElementById('bookingForm2');
+                                        if (form.classList.contains('hidden')) {
+                                            form.classList.remove('hidden');
+                                        } else {
+                                            form.classList.add('hidden');
+                                        }
+                                    }
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script>
+                function toggleDetails(id) {
+                    const details = document.getElementById(id);
+                    const icon = document.getElementById(id.replace('details', 'icon'));
+                    
+                    if (details.classList.contains('hidden')) {
+                        details.classList.remove('hidden');
+                        icon.style.transform = 'rotate(180deg)';
+                    } else {
+                        details.classList.add('hidden');
+                        icon.style.transform = 'rotate(0deg)';
+                    }
+                }
+    </script>
+     <!-- Card 3: Chùa Âng -->
+     <div class="w-full sm:w-1/3 lg:w-1/3 px-4 mb-8">
+        <div class="bg-white rounded-lg shadow-md p-6">
+                    <img src="ditichquocgia/chuaang.jpg" alt="Chùa Âng" class="w-full h-80 object-cover mb-4 rounded shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-xl font-semibold text-blue-700 mb-3">Chùa Âng</h3>
+                    <p class="text-gray-700 mb-4">Chùa Âng được xây dựng vào khoảng năm 990, là một trong những ngôi chùa Khmer cổ nhất tại Trà Vinh. Ngôi chùa mang đậm kiến trúc Khmer truyền thống với nhiều họa tiết chạm khắc tinh xảo.</p>
+
+                    <div class="text-sm text-gray-600">
+                        <p><i class="fas fa-map-marker-alt mr-2"></i>Khóm 4, Phường 8, TP. Trà Vinh</p>
+                        <p><i class="far fa-calendar-alt mr-2"></i>Thành lập: Khoảng năm 990</p>
+                        <p><i class="fas fa-award mr-2"></i>Công nhận di tích: 16/11/2018</p>
+                    </div>
+                        <button onclick="toggleDetails('chuaang-details')" class="mt-4 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full transition duration-300 flex items-center justify-center gap-2">
+                            <span>Xem chi tiết</span>
+                            <i class="fas fa-chevron-down transition-transform duration-300" id="chuaang-icon"></i>
+                        </button>
+
+                        <div id="chuaang-details" class="hidden mt-4 bg-gray-50 p-4 rounded-lg transition-all duration-300">
+                            <h4 class="font-semibold text-lg mb-2">Lịch sử hình thành</h4>
+                            <p class="text-gray-700 mb-3">Chùa Âng được xây dựng vào khoảng năm 990, là một trong những ngôi chùa Khmer cổ nhất tại Trà Vinh. Ngôi chùa mang đậm kiến trúc Khmer truyền thống với nhiều họa tiết chạm khắc tinh xảo.</p>
+
+                            <h4 class="font-semibold text-lg mb-2">Giá trị văn hóa</h4>
+                            <p class="text-gray-700 mb-3">
+                                <ul class="list-disc ml-6">
+                                    <li>Trung tâm văn hóa Phật giáo Khmer</li>
+                                    <li>Kiến trúc độc đáo Nam tông</li>
+                                    <li>Nơi tổ chức lễ hội truyền thống</li>
+                                    <li>Điểm du lịch tâm linh nổi tiếng</li>
+                                </ul>
+                            </p>
+
+                            <h4 class="font-semibold text-lg mb-2">Giá trị lịch sử</h4>
+                            <p class="text-gray-700 mb-3">
+                                <ul class="list-disc ml-6">
+                                    <li>Di tích văn hóa cấp quốc gia</li>
+                                    <li>Chứng tích lịch sử Khmer</li>
+                                    <li>Nơi lưu giữ văn hóa truyền thống</li>
+                                    <li>Điểm son văn hóa tâm linh</li>
+                                </ul>
+                            </p>
+
+                            <h4 class="font-semibold text-lg mb-2">Tiện ích tham quan</h4>
+                            <div class="grid grid-cols-2 gap-4 text-gray-700">
+                                <div>
+                                    <h5 class="font-medium mb-2">Dịch vụ</h5>
+                                    <ul class="list-disc ml-6">
+                                        <li>Hướng dẫn tham quan</li>
+                                        <li>Khu vui chơi giải trí</li>
+                                        <li>Không gian xanh mát</li>
+                                        <li>Bãi đỗ xe</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h5 class="font-medium mb-2">Thông tin hữu ích</h5>
+                                    <ul class="list-disc ml-6">
+                                        <li>Mở cửa: 6:00 - 18:00</li>
+                                        <li>Thuyết minh đa ngôn ngữ</li>
+                                        <li>Tham quan miễn phí</li>
+                                        <li>Chụp ảnh tự do</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="mt-4">
+                                <!-- Bản đồ -->
+                                <div class="mb-4 h-64 rounded-lg overflow-hidden">
+                                    <iframe 
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3928.841454392438!2d106.34573661474199!3d10.033297892830387!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDAxJzU5LjkiTiAxMDbCsDIwJzQ0LjYiRQ!5e0!3m2!1svi!2s!4v1635789012345!5m2!1svi!2s"
+                                        class="w-full h-full border-0"
+                                        allowfullscreen=""
+                                        loading="lazy">
+                                    </iframe>
+                                </div>
+
+                                <!-- Nút chỉ đường và đặt lịch -->
+                                <div class="flex gap-4">
+                                    <button onclick="window.open('https://www.google.com/maps/dir//10.033297,106.345736')" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-full flex items-center gap-2">
+                                        <i class="fas fa-map-marked-alt"></i>
+                                        Chỉ đường
+                                    </button>
+                                    
+                                    <button onclick="showBookingForm3()" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-full flex items-center gap-2">
+                                        <i class="fas fa-calendar-alt"></i>
+                                        Đặt lịch tham quan
+                                    </button>
+                                </div>
+
+                                <!-- Form đặt lịch -->
+                                <div id="bookingForm3" class="hidden mt-4 p-4 bg-gray-100 rounded-lg">
+                                    <h5 class="font-medium mb-3">Đặt lịch tham quan</h5>
+                                    <form class="space-y-3" onsubmit="return false;">
+                                        <div>
+                                            <label class="block text-sm mb-1">Họ và tên</label>
+                                            <input type="text" class="w-full px-3 py-2 border rounded" placeholder="Nhập họ và tên của bạn" required>
+                                        </div>
+                                        <div>
+                                            <label class="block text-sm mb-1">Email</label>
+                                            <input type="email" class="w-full px-3 py-2 border rounded" placeholder="Nhập email của bạn" required>
+                                        </div>
+                                        <div>
+                                            <label class="block text-sm mb-1">Số điện thoại</label>
+                                            <input type="tel" class="w-full px-3 py-2 border rounded" placeholder="Nhập số điện thoại của bạn" required>
+                                        </div>
+                                        <div>
+                                            <label class="block text-sm mb-1">Ngày tham quan</label>
+                                            <input type="date" class="w-full px-3 py-2 border rounded" required>
+                                        </div>
+                                        <div>
+                                            <label class="block text-sm mb-1">Thời gian</label>
+                                            <select class="w-full px-3 py-2 border rounded" required>
+                                                <option value="">Chọn thời gian</option>
+                                                <option value="morning">Buổi sáng (8:00 - 11:00)</option>
+                                                <option value="afternoon">Buổi chiều (14:00 - 17:00)</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <label class="block text-sm mb-1">Số người tham quan</label>
+                                            <input type="number" min="1" class="w-full px-3 py-2 border rounded" placeholder="Nhập số người tham quan" required>
+                                        </div>
+                                        <div>
+                                            <label class="block text-sm mb-1">Ghi chú thêm</label>
+                                            <textarea class="w-full px-3 py-2 border rounded" rows="3" placeholder="Nhập ghi chú nếu có"></textarea>
+                                        </div>
+                                        <button type="submit" class="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded">
+                                            Xác nhận đặt lịch
+                                        </button>
+                                    </form>
+                                </div>
+                                <script>
+                                    function showBookingForm3() {
+                                        const form = document.getElementById('bookingForm3');
+                                        if (form.classList.contains('hidden')) {
+                                            form.classList.remove('hidden');
+                                        } else {
+                                            form.classList.add('hidden');
+                                        }
+                                    }
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script>
+                function toggleDetails(id) {
+                    const details = document.getElementById(id);
+                    const icon = document.getElementById(id.replace('details', 'icon'));
+                    
+                    if (details.classList.contains('hidden')) {
+                        details.classList.remove('hidden');
+                        icon.style.transform = 'rotate(180deg)';
+                    } else {
+                        details.classList.add('hidden');
+                        icon.style.transform = 'rotate(0deg)';
+                    }
+                }
+    </script>
+
+<div class="w-full sm:w-1/3 lg:w-1/3 px-4 mb-8">
+    <div class="bg-white rounded-lg shadow-md p-6">
+                    <img src="ditichquocgia/chuakpmpong.jpg" alt="Chùa KomPong" class="w-full h-80 object-cover mb-4 rounded shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-xl font-semibold text-blue-700 mb-3">Chùa KomPong</h3>
+                    <p class="text-gray-700 mb-4">Chùa KomPong được xây dựng vào thế kỷ 16, là một di sản văn hóa quý giá của người Khmer tại Trà Vinh.</p>
+
+                    <div class="text-sm text-gray-600">
+                        <p><i class="fas fa-map-marker-alt mr-2"></i>50/1 Lê Lợi, Khóm 2, Phường 1, TP. Trà Vinh</p>
+                        <p><i class="far fa-calendar-alt mr-2"></i>Thành lập: Thế kỷ 16</p>
+                        <p><i class="fas fa-award mr-2"></i>Công nhận di tích: 16/11/2018</p>
+                    </div>
+                        <button onclick="toggleDetails('chuakompong-details')" class="mt-4 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full transition duration-300 flex items-center justify-center gap-2">
+                            <span>Xem chi tiết</span>
+                            <i class="fas fa-chevron-down transition-transform duration-300" id="chuakompong-icon"></i>
+                        </button>
+
+                        <div id="chuakompong-details" class="hidden mt-4 bg-gray-50 p-4 rounded-lg transition-all duration-300">
+                            <h4 class="font-semibold text-lg mb-2">Lịch sử hình thành</h4>
+                            <p class="text-gray-700 mb-3">Chùa KomPong được xây dựng vào thế kỷ 16, là một trong những ngôi chùa Khmer cổ kính tại Trà Vinh. Ngôi chùa mang đậm kiến trúc truyền thống của người Khmer và là trung tâm văn hóa tâm linh quan trọng của cộng đồng.</p>
+
+                            <h4 class="font-semibold text-lg mb-2">Giá trị văn hóa</h4>
+                            <p class="text-gray-700 mb-3">
+                                <ul class="list-disc ml-6">
+                                    <li>Trung tâm văn hóa Phật giáo Khmer</li>
+                                    <li>Kiến trúc độc đáo Nam tông</li>
+                                    <li>Nơi tổ chức lễ hội truyền thống</li>
+                                    <li>Điểm du lịch tâm linh nổi tiếng</li>
+                                </ul>
+                            </p>
+
+                            <h4 class="font-semibold text-lg mb-2">Giá trị lịch sử</h4>
+                            <p class="text-gray-700 mb-3">
+                                <ul class="list-disc ml-6">
+                                    <li>Di tích văn hóa cấp quốc gia</li>
+                                    <li>Chứng tích lịch sử Khmer</li>
+                                    <li>Nơi lưu giữ văn hóa truyền thống</li>
+                                    <li>Điểm son văn hóa tâm linh</li>
+                                </ul>
+                            </p>
+
+                            <h4 class="font-semibold text-lg mb-2">Tiện ích tham quan</h4>
+                            <div class="grid grid-cols-2 gap-4 text-gray-700">
+                                <div>
+                                    <h5 class="font-medium mb-2">Dịch vụ</h5>
+                                    <ul class="list-disc ml-6">
+                                        <li>Hướng dẫn tham quan</li>
+                                        <li>Khu vui chơi giải trí</li>
+                                        <li>Không gian xanh mát</li>
+                                        <li>Bãi đỗ xe</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h5 class="font-medium mb-2">Thông tin hữu ích</h5>
+                                    <ul class="list-disc ml-6">
+                                        <li>Mở cửa: 6:00 - 18:00</li>
+                                        <li>Thuyết minh đa ngôn ngữ</li>
+                                        <li>Tham quan miễn phí</li>
+                                        <li>Chụp ảnh tự do</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="mt-4">
+                                <!-- Bản đồ -->
+                                <div class="mb-4 h-64 rounded-lg overflow-hidden">
+                                    <iframe 
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3928.841454392438!2d106.34573661474199!3d10.033297892830387!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDAxJzU5LjkiTiAxMDbCsDIwJzQ0LjYiRQ!5e0!3m2!1svi!2s!4v1635789012345!5m2!1svi!2s"
+                                        class="w-full h-full border-0"
+                                        allowfullscreen=""
+                                        loading="lazy">
+                                    </iframe>
+                                </div>
+
+                                <!-- Nút chỉ đường và đặt lịch -->
+                                <div class="flex gap-4">
+                                    <button onclick="window.open('https://www.google.com/maps/dir//10.033297,106.345736')" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-full flex items-center gap-2">
+                                        <i class="fas fa-map-marked-alt"></i>
+                                        Chỉ đường
+                                    </button>
+                                    
+                                    <button onclick="showBookingForm4()" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-full flex items-center gap-2">
+                                        <i class="fas fa-calendar-alt"></i>
+                                        Đặt lịch tham quan
+                                    </button>
+                                </div>
+
+                                <!-- Form đặt lịch -->
+                                <div id="bookingForm4" class="hidden mt-4 p-4 bg-gray-100 rounded-lg">
+                                    <h5 class="font-medium mb-3">Đặt lịch tham quan</h5>
+                                    <form class="space-y-3" onsubmit="return false;">
+                                        <div>
+                                            <label class="block text-sm mb-1">Họ và tên</label>
+                                            <input type="text" class="w-full px-3 py-2 border rounded" placeholder="Nhập họ và tên của bạn" required>
+                                        </div>
+                                        <div>
+                                            <label class="block text-sm mb-1">Email</label>
+                                            <input type="email" class="w-full px-3 py-2 border rounded" placeholder="Nhập email của bạn" required>
+                                        </div>
+                                        <div>
+                                            <label class="block text-sm mb-1">Số điện thoại</label>
+                                            <input type="tel" class="w-full px-3 py-2 border rounded" placeholder="Nhập số điện thoại của bạn" required>
+                                        </div>
+                                        <div>
+                                            <label class="block text-sm mb-1">Ngày tham quan</label>
+                                            <input type="date" class="w-full px-3 py-2 border rounded" required>
+                                        </div>
+                                        <div>
+                                            <label class="block text-sm mb-1">Thời gian</label>
+                                            <select class="w-full px-3 py-2 border rounded" required>
+                                                <option value="">Chọn thời gian</option>
+                                                <option value="morning">Buổi sáng (8:00 - 11:00)</option>
+                                                <option value="afternoon">Buổi chiều (14:00 - 17:00)</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <label class="block text-sm mb-1">Số người tham quan</label>
+                                            <input type="number" min="1" class="w-full px-3 py-2 border rounded" placeholder="Nhập số người tham quan" required>
+                                        </div>
+                                        <div>
+                                            <label class="block text-sm mb-1">Ghi chú thêm</label>
+                                            <textarea class="w-full px-3 py-2 border rounded" rows="3" placeholder="Nhập ghi chú nếu có"></textarea>
+                                        </div>
+                                        <button type="submit" class="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded">
+                                            Xác nhận đặt lịch
+                                        </button>
+                                    </form>
+                                </div>
+                                <script>
+                                    function showBookingForm4() {
+                                        const form = document.getElementById('bookingForm4');
+                                        if (form.classList.contains('hidden')) {
+                                            form.classList.remove('hidden');
+                                        } else {
+                                            form.classList.add('hidden');
+                                        }
+                                    }
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script>
+                function toggleDetails(id) {
+                    const details = document.getElementById(id);
+                    const icon = document.getElementById(id.replace('details', 'icon'));
+                    
+                    if (details.classList.contains('hidden')) {
+                        details.classList.remove('hidden');
+                        icon.style.transform = 'rotate(180deg)';
+                    } else {
+                        details.classList.add('hidden');
+                        icon.style.transform = 'rotate(0deg)';
+                    }
+                }
+    </script>
+
+                <div class="w-full sm:w-1/3 lg:w-1/3 px-4 mb-8">
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                    <img src="ditichquocgia/logach.jpg" alt="Chùa Lo gạch" class="w-full h-80 object-cover mb-4 rounded shadow-lg hover:shadow-xl transition-shadow duration-300">>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold text-blue-600 mb-3">Chùa Lo gạch</h3>
+                        <p class="text-gray-700 mb-4">Chùa Lo Gạch được xây dựng vào thế kỷ 19, là một trong những ngôi chùa Khmer cổ kính tại Trà Vinh. Ngôi chùa được xây dựng với kiến trúc độc đáo kết hợp giữa phong cách truyền thống Khmer và những nét đặc trưng của vùng đất Nam Bộ.</p>
+
+                        <div class="text-sm text-gray-600">
+                            <p><i class="fas fa-map-marker-alt mr-2"></i>Xã Lương Hòa, H. Châu Thành</p>
+                            <p><i class="far fa-calendar-alt mr-2"></i>Thành lập: Thế kỷ 19</p>
+                            <p><i class="fas fa-award mr-2"></i>Công nhận di tích: 16/11/2018</p>
+                        </div>
+                               <button onclick="toggleDetails('logach-details')" class="mt-4 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full transition duration-300 flex items-center justify-center gap-2">
+                                <span>Xem chi tiết</span>
+                                <i class="fas fa-chevron-down transition-transform duration-300" id="logach-icon"></i>
+                            </button>
+    
+                            <div id="logach-details" class="hidden mt-4 bg-gray-50 p-4 rounded-lg transition-all duration-300">
+                                <h4 class="font-semibold text-lg mb-2">Lịch sử hình thành</h4>
+                                <p class="text-gray-700 mb-3">Chùa Lo Gạch được xây dựng vào thế kỷ 19, là một trong những ngôi chùa Khmer cổ kính tại Trà Vinh. Ngôi chùa được xây dựng với kiến trúc độc đáo kết hợp giữa phong cách truyền thống Khmer và những nét đặc trưng của vùng đất Nam Bộ.</p>
+    
+                                <h4 class="font-semibold text-lg mb-2">Giá trị văn hóa</h4>
+                                <p class="text-gray-700 mb-3">
+                                    <ul class="list-disc ml-6">
+                                        <li>Trung tâm văn hóa Phật giáo Khmer</li>
+                                        <li>Kiến trúc độc đáo Nam tông</li>
+                                        <li>Nơi tổ chức lễ hội truyền thống</li>
+                                        <li>Điểm du lịch tâm linh nổi tiếng</li>
+                                    </ul>
+                                </p>
+    
+                                <h4 class="font-semibold text-lg mb-2">Giá trị lịch sử</h4>
+                                <p class="text-gray-700 mb-3">
+                                    <ul class="list-disc ml-6">
+                                        <li>Di tích văn hóa cấp quốc gia</li>
+                                        <li>Chứng tích lịch sử Khmer</li>
+                                        <li>Nơi lưu giữ văn hóa truyền thống</li>
+                                        <li>Điểm son văn hóa tâm linh</li>
+                                    </ul>
+                                </p>
+    
+                                <h4 class="font-semibold text-lg mb-2">Tiện ích tham quan</h4>
+                                <div class="grid grid-cols-2 gap-4 text-gray-700">
+                                    <div>
+                                        <h5 class="font-medium mb-2">Dịch vụ</h5>
+                                        <ul class="list-disc ml-6">
+                                            <li>Hướng dẫn tham quan</li>
+                                            <li>Khu vui chơi giải trí</li>
+                                            <li>Không gian xanh mát</li>
+                                            <li>Bãi đỗ xe</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h5 class="font-medium mb-2">Thông tin hữu ích</h5>
+                                        <ul class="list-disc ml-6">
+                                            <li>Mở cửa: 6:00 - 18:00</li>
+                                            <li>Thuyết minh đa ngôn ngữ</li>
+                                            <li>Tham quan miễn phí</li>
+                                            <li>Chụp ảnh tự do</li>
+                                        </ul>
+                                    </div>
+                                </div>
+    
+                                <div class="mt-4">
+                                    <!-- Bản đồ -->
+                                    <div class="mb-4 h-64 rounded-lg overflow-hidden">
+                                        <iframe 
+                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3928.841454392438!2d106.34573661474199!3d10.033297892830387!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDAxJzU5LjkiTiAxMDbCsDIwJzQ0LjYiRQ!5e0!3m2!1svi!2s!4v1635789012345!5m2!1svi!2s"
+                                            class="w-full h-full border-0"
+                                            allowfullscreen=""
+                                            loading="lazy">
+                                        </iframe>
+                                    </div>
+    
+                                    <!-- Nút chỉ đường và đặt lịch -->
+                                    <div class="flex gap-4">
+                                        <button onclick="window.open('https://www.google.com/maps/dir//10.033297,106.345736')" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-full flex items-center gap-2">
+                                            <i class="fas fa-map-marked-alt"></i>
+                                            Chỉ đường
+                                        </button>
+                                        
+                                        <button onclick="showBookingForm5()" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-full flex items-center gap-2">
+                                            <i class="fas fa-calendar-alt"></i>
+                                            Đặt lịch tham quan
+                                        </button>
+                                    </div>
+    
+                                    <!-- Form đặt lịch -->
+                                    <div id="bookingForm5" class="hidden mt-4 p-4 bg-gray-100 rounded-lg">
+                                        <h5 class="font-medium mb-3">Đặt lịch tham quan</h5>
+                                        <form class="space-y-3" onsubmit="return false;">
+                                            <div>
+                                                <label class="block text-sm mb-1">Họ và tên</label>
+                                                <input type="text" class="w-full px-3 py-2 border rounded" placeholder="Nhập họ và tên của bạn" required>
+                                            </div>
+                                            <div>
+                                                <label class="block text-sm mb-1">Email</label>
+                                                <input type="email" class="w-full px-3 py-2 border rounded" placeholder="Nhập email của bạn" required>
+                                            </div>
+                                            <div>
+                                                <label class="block text-sm mb-1">Số điện thoại</label>
+                                                <input type="tel" class="w-full px-3 py-2 border rounded" placeholder="Nhập số điện thoại của bạn" required>
+                                            </div>
+                                            <div>
+                                                <label class="block text-sm mb-1">Ngày tham quan</label>
+                                                <input type="date" class="w-full px-3 py-2 border rounded" required>
+                                            </div>
+                                            <div>
+                                                <label class="block text-sm mb-1">Thời gian</label>
+                                                <select class="w-full px-3 py-2 border rounded" required>
+                                                    <option value="">Chọn thời gian</option>
+                                                    <option value="morning">Buổi sáng (8:00 - 11:00)</option>
+                                                    <option value="afternoon">Buổi chiều (14:00 - 17:00)</option>
+                                                </select>
+                                            </div>
+                                            <div>
+                                                <label class="block text-sm mb-1">Số người tham quan</label>
+                                                <input type="number" min="1" class="w-full px-3 py-2 border rounded" placeholder="Nhập số người tham quan" required>
+                                            </div>
+                                            <div>
+                                                <label class="block text-sm mb-1">Ghi chú thêm</label>
+                                                <textarea class="w-full px-3 py-2 border rounded" rows="3" placeholder="Nhập ghi chú nếu có"></textarea>
+                                            </div>
+                                            <button type="submit" class="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded">
+                                                Xác nhận đặt lịch
+                                            </button>
+                                        </form>
+                                    </div>
+                                    <script>
+                                        function showBookingForm5() {
+                                            const form = document.getElementById('bookingForm5');
+                                            if (form.classList.contains('hidden')) {
+                                                form.classList.remove('hidden');
+                                            } else {
+                                                form.classList.add('hidden');
+                                            }
+                                        }
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    function toggleDetails(id) {
+                        const details = document.getElementById(id);
+                        const icon = document.getElementById(id.replace('details', 'icon'));
+                        
+                        if (details.classList.contains('hidden')) {
+                            details.classList.remove('hidden');
+                            icon.style.transform = 'rotate(180deg)';
+                        } else {
+                            details.classList.add('hidden');
+                            icon.style.transform = 'rotate(0deg)';
+                        }
+                    }
+        </script>
+            <div class="w-full sm:w-1/3 lg:w-1/3 px-4 mb-8">
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <img src="ditichquocgia/chuagiaclinh.jpg" alt="Chùa Giác Linh" class="w-full h-80 object-cover mb-4 rounded shadow-lg hover:shadow-xl transition-shadow duration-300">>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold text-blue-600 mb-3">Chùa Giác Linh</h3>
+                        <p class="text-gray-700 mb-4">Chùa Giác Linh được xây dựng vào thế kỷ 18, là một di sản văn hóa quý giá của Phật giáo Nam tông Khmer tại Trà Vinh. Ngôi chùa được xây dựng theo kiến trúc truyền thống với nhiều họa tiết chạm khắc tinh xảo mang đậm bản sắc văn hóa Khmer. Qua hơn 200 năm tồn tại, chùa đã trở thành trung tâm sinh hoạt văn hóa tâm linh quan trọng của cộng đồng địa phương, nơi lưu giữ và bảo tồn nhiều giá trị văn hóa truyền thống quý báu.</p>
+
+                        <div class="text-sm text-gray-600">
+                            <p><i class="fas fa-map-marker-alt mr-2"></i>Xã Lương Hòa, H. Châu Thành</p>
+                            <p><i class="far fa-calendar-alt mr-2"></i>Thành lập: Thế kỷ 18</p>
+                            <p><i class="fas fa-award mr-2"></i>Công nhận di tích: 16/11/2018</p>
+                        </div>
+                            <button onclick="toggleDetails('giaclinh-details')" class="mt-4 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full transition duration-300 flex items-center justify-center gap-2">
+                                <span>Xem chi tiết</span>
+                                <i class="fas fa-chevron-down transition-transform duration-300" id="giaclinh-icon"></i>
+                            </button>
+    
+                            <div id="giaclinh-details" class="hidden mt-4 bg-gray-50 p-4 rounded-lg transition-all duration-300">
+                                <h4 class="font-semibold text-lg mb-2">Lịch sử hình thành</h4>
+                                <p class="text-gray-700 mb-3">Chùa Giác Linh được xây dựng vào thế kỷ 18, là một trong những ngôi chùa Khmer cổ kính tại Trà Vinh. Trải qua hơn 200 năm tồn tại, chùa đã trở thành trung tâm văn hóa tâm linh quan trọng của cộng đồng người Khmer trong vùng.</p>
+    
+                                <h4 class="font-semibold text-lg mb-2">Giá trị văn hóa</h4>
+                                <p class="text-gray-700 mb-3">
+                                    <ul class="list-disc ml-6">
+                                        <li>Trung tâm văn hóa Phật giáo Khmer</li>
+                                        <li>Kiến trúc độc đáo Nam tông</li>
+                                        <li>Nơi tổ chức lễ hội truyền thống</li>
+                                        <li>Điểm du lịch tâm linh nổi tiếng</li>
+                                    </ul>
+                                </p>
+    
+                                <h4 class="font-semibold text-lg mb-2">Giá trị lịch sử</h4>
+                                <p class="text-gray-700 mb-3">
+                                    <ul class="list-disc ml-6">
+                                        <li>Di tích văn hóa cấp quốc gia</li>
+                                        <li>Chứng tích lịch sử Khmer</li>
+                                        <li>Nơi lưu giữ văn hóa truyền thống</li>
+                                        <li>Điểm son văn hóa tâm linh</li>
+                                    </ul>
+                                </p>
+    
+                                <h4 class="font-semibold text-lg mb-2">Tiện ích tham quan</h4>
+                                <div class="grid grid-cols-2 gap-4 text-gray-700">
+                                    <div>
+                                        <h5 class="font-medium mb-2">Dịch vụ</h5>
+                                        <ul class="list-disc ml-6">
+                                            <li>Hướng dẫn tham quan</li>
+                                            <li>Khu vui chơi giải trí</li>
+                                            <li>Không gian xanh mát</li>
+                                            <li>Bãi đỗ xe</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h5 class="font-medium mb-2">Thông tin hữu ích</h5>
+                                        <ul class="list-disc ml-6">
+                                            <li>Mở cửa: 6:00 - 18:00</li>
+                                            <li>Thuyết minh đa ngôn ngữ</li>
+                                            <li>Tham quan miễn phí</li>
+                                            <li>Chụp ảnh tự do</li>
+                                        </ul>
+                                    </div>
+                                </div>
+    
+                                <div class="mt-4">
+                                    <!-- Bản đồ -->
+                                    <div class="mb-4 h-64 rounded-lg overflow-hidden">
+                                        <iframe 
+                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3928.841454392438!2d106.34573661474199!3d10.033297892830387!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDAxJzU5LjkiTiAxMDbCsDIwJzQ0LjYiRQ!5e0!3m2!1svi!2s!4v1635789012345!5m2!1svi!2s"
+                                            class="w-full h-full border-0"
+                                            allowfullscreen=""
+                                            loading="lazy">
+                                        </iframe>
+                                    </div>
+    
+                                    <!-- Nút chỉ đường và đặt lịch -->
+                                    <div class="flex gap-4">
+                                        <button onclick="window.open('https://www.google.com/maps/dir//10.033297,106.345736')" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-full flex items-center gap-2">
+                                            <i class="fas fa-map-marked-alt"></i>
+                                            Chỉ đường
+                                        </button>
+                                        
+                                        <button onclick="showBookingForm6()" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-full flex items-center gap-2">
+                                            <i class="fas fa-calendar-alt"></i>
+                                            Đặt lịch tham quan
+                                        </button>
+                                    </div>
+    
+                                    <!-- Form đặt lịch -->
+                                    <div id="bookingForm6" class="hidden mt-4 p-4 bg-gray-100 rounded-lg">
+                                        <h5 class="font-medium mb-3">Đặt lịch tham quan</h5>
+                                        <form class="space-y-3" onsubmit="return false;">
+                                            <div>
+                                                <label class="block text-sm mb-1">Họ và tên</label>
+                                                <input type="text" class="w-full px-3 py-2 border rounded" placeholder="Nhập họ và tên của bạn" required>
+                                            </div>
+                                            <div>
+                                                <label class="block text-sm mb-1">Email</label>
+                                                <input type="email" class="w-full px-3 py-2 border rounded" placeholder="Nhập email của bạn" required>
+                                            </div>
+                                            <div>
+                                                <label class="block text-sm mb-1">Số điện thoại</label>
+                                                <input type="tel" class="w-full px-3 py-2 border rounded" placeholder="Nhập số điện thoại của bạn" required>
+                                            </div>
+                                            <div>
+                                                <label class="block text-sm mb-1">Ngày tham quan</label>
+                                                <input type="date" class="w-full px-3 py-2 border rounded" required>
+                                            </div>
+                                            <div>
+                                                <label class="block text-sm mb-1">Thời gian</label>
+                                                <select class="w-full px-3 py-2 border rounded" required>
+                                                    <option value="">Chọn thời gian</option>
+                                                    <option value="morning">Buổi sáng (8:00 - 11:00)</option>
+                                                    <option value="afternoon">Buổi chiều (14:00 - 17:00)</option>
+                                                </select>
+                                            </div>
+                                            <div>
+                                                <label class="block text-sm mb-1">Số người tham quan</label>
+                                                <input type="number" min="1" class="w-full px-3 py-2 border rounded" placeholder="Nhập số người tham quan" required>
+                                            </div>
+                                            <div>
+                                                <label class="block text-sm mb-1">Ghi chú thêm</label>
+                                                <textarea class="w-full px-3 py-2 border rounded" rows="3" placeholder="Nhập ghi chú nếu có"></textarea>
+                                            </div>
+                                            <button type="submit" class="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded">
+                                                Xác nhận đặt lịch
+                                            </button>
+                                        </form>
+                                    </div>
+                                    <script>
+                                        function showBookingForm6() {
+                                            const form = document.getElementById('bookingForm6');
+                                            if (form.classList.contains('hidden')) {
+                                                form.classList.remove('hidden');
+                                            } else {
+                                                form.classList.add('hidden');
+                                            }
+                                        }
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    function toggleDetails(id) {
+                        const details = document.getElementById(id);
+                        const icon = document.getElementById(id.replace('details', 'icon'));
+                        
+                        if (details.classList.contains('hidden')) {
+                            details.classList.remove('hidden');
+                            icon.style.transform = 'rotate(180deg)';
+                        } else {
+                            details.classList.add('hidden');
+                            icon.style.transform = 'rotate(0deg)';
+                        }
+                    }
+        </script>
+
+        <div class="w-full sm:w-1/3 lg:w-1/3 px-4 mb-8">
+             <div class="bg-white rounded-lg shadow-md p-6">
+                    <img src="ditichquocgia/chuatalon.jpg" alt="Chùa TaLon" class="w-full h-80 object-cover mb-4 rounded shadow-lg hover:shadow-xl transition-shadow duration-300">>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold text-blue-600 mb-3">Chùa TaLon</h3>
+                        <p class="text-gray-700 mb-4">Chùa TaLon được xây dựng vào thế kỷ 17, là một trong những ngôi chùa Khmer cổ kính tại Trà Vinh. Ngôi chùa mang đậm kiến trúc Phật giáo Nam tông Khmer với nhiều họa tiết chạm khắc tinh xảo. Trải qua hơn 400 năm tồn tại, chùa đã trở thành trung tâm văn hóa tâm linh quan trọng của cộng đồng người Khmer trong vùng.</p>
+
+                        <div class="text-sm text-gray-600">
+                            <p><i class="fas fa-map-marker-alt mr-2"></i>Xã Đại An, H. Trà Cú</p>
+                            <p><i class="far fa-calendar-alt mr-2"></i>Thành lập: Thế kỷ 17</p>
+                            <p><i class="fas fa-award mr-2"></i>Công nhận di tích: 16/11/2018</p>
+                        </div>
+                            <button onclick="toggleDetails('chuatalon-details')" class="mt-4 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full transition duration-300 flex items-center justify-center gap-2">
+                                <span>Xem chi tiết</span>
+                                <i class="fas fa-chevron-down transition-transform duration-300" id="chuatalon-icon"></i>
+                            </button>
+    
+                            <div id="chuatalon-details" class="hidden mt-4 bg-gray-50 p-4 rounded-lg transition-all duration-300">
+                                <h4 class="font-semibold text-lg mb-2">Lịch sử hình thành</h4>
+                                <p class="text-gray-700 mb-3">Chùa TaLon được xây dựng vào thế kỷ 17, là một trong những ngôi chùa Khmer cổ kính tại Trà Vinh. Trải qua hơn 400 năm tồn tại, chùa đã trở thành trung tâm văn hóa tâm linh quan trọng của cộng đồng người Khmer trong vùng.</p>
+    
+                                <h4 class="font-semibold text-lg mb-2">Giá trị văn hóa</h4>
+                                <p class="text-gray-700 mb-3">
+                                    <ul class="list-disc ml-6">
+                                        <li>Trung tâm văn hóa Phật giáo Khmer</li>
+                                        <li>Kiến trúc độc đáo Nam tông</li>
+                                        <li>Nơi tổ chức lễ hội truyền thống</li>
+                                        <li>Điểm du lịch tâm linh nổi tiếng</li>
+                                    </ul>
+                                </p>
+    
+                                <h4 class="font-semibold text-lg mb-2">Giá trị lịch sử</h4>
+                                <p class="text-gray-700 mb-3">
+                                    <ul class="list-disc ml-6">
+                                        <li>Di tích văn hóa cấp quốc gia</li>
+                                        <li>Chứng tích lịch sử Khmer</li>
+                                        <li>Nơi lưu giữ văn hóa truyền thống</li>
+                                        <li>Điểm son văn hóa tâm linh</li>
+                                    </ul>
+                                </p>
+    
+                                <h4 class="font-semibold text-lg mb-2">Tiện ích tham quan</h4>
+                                <div class="grid grid-cols-2 gap-4 text-gray-700">
+                                    <div>
+                                        <h5 class="font-medium mb-2">Dịch vụ</h5>
+                                        <ul class="list-disc ml-6">
+                                            <li>Hướng dẫn tham quan</li>
+                                            <li>Khu vui chơi giải trí</li>
+                                            <li>Không gian xanh mát</li>
+                                            <li>Bãi đỗ xe</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h5 class="font-medium mb-2">Thông tin hữu ích</h5>
+                                        <ul class="list-disc ml-6">
+                                            <li>Mở cửa: 6:00 - 18:00</li>
+                                            <li>Thuyết minh đa ngôn ngữ</li>
+                                            <li>Tham quan miễn phí</li>
+                                            <li>Chụp ảnh tự do</li>
+                                        </ul>
+                                    </div>
+                                </div>
+    
+                                <div class="mt-4">
+                                    <!-- Bản đồ -->
+                                    <div class="mb-4 h-64 rounded-lg overflow-hidden">
+                                        <iframe 
+                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3928.841454392438!2d106.34573661474199!3d10.033297892830387!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDAxJzU5LjkiTiAxMDbCsDIwJzQ0LjYiRQ!5e0!3m2!1svi!2s!4v1635789012345!5m2!1svi!2s"
+                                            class="w-full h-full border-0"
+                                            allowfullscreen=""
+                                            loading="lazy">
+                                        </iframe>
+                                    </div>
+    
+                                    <!-- Nút chỉ đường và đặt lịch -->
+                                    <div class="flex gap-4">
+                                        <button onclick="window.open('https://www.google.com/maps/dir//10.033297,106.345736')" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-full flex items-center gap-2">
+                                            <i class="fas fa-map-marked-alt"></i>
+                                            Chỉ đường
+                                        </button>
+                                        
+                                        <button onclick="showBookingForm7()" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-full flex items-center gap-2">
+                                            <i class="fas fa-calendar-alt"></i>
+                                            Đặt lịch tham quan
+                                        </button>
+                                    </div>
+    
+                                    <!-- Form đặt lịch -->
+                                    <div id="bookingForm7" class="hidden mt-4 p-4 bg-gray-100 rounded-lg">
+                                        <h5 class="font-medium mb-3">Đặt lịch tham quan</h5>
+                                        <form class="space-y-3" onsubmit="return false;">
+                                            <div>
+                                                <label class="block text-sm mb-1">Họ và tên</label>
+                                                <input type="text" class="w-full px-3 py-2 border rounded" placeholder="Nhập họ và tên của bạn" required>
+                                            </div>
+                                            <div>
+                                                <label class="block text-sm mb-1">Email</label>
+                                                <input type="email" class="w-full px-3 py-2 border rounded" placeholder="Nhập email của bạn" required>
+                                            </div>
+                                            <div>
+                                                <label class="block text-sm mb-1">Số điện thoại</label>
+                                                <input type="tel" class="w-full px-3 py-2 border rounded" placeholder="Nhập số điện thoại của bạn" required>
+                                            </div>
+                                            <div>
+                                                <label class="block text-sm mb-1">Ngày tham quan</label>
+                                                <input type="date" class="w-full px-3 py-2 border rounded" required>
+                                            </div>
+                                            <div>
+                                                <label class="block text-sm mb-1">Thời gian</label>
+                                                <select class="w-full px-3 py-2 border rounded" required>
+                                                    <option value="">Chọn thời gian</option>
+                                                    <option value="morning">Buổi sáng (8:00 - 11:00)</option>
+                                                    <option value="afternoon">Buổi chiều (14:00 - 17:00)</option>
+                                                </select>
+                                            </div>
+                                            <div>
+                                                <label class="block text-sm mb-1">Số người tham quan</label>
+                                                <input type="number" min="1" class="w-full px-3 py-2 border rounded" placeholder="Nhập số người tham quan" required>
+                                            </div>
+                                            <div>
+                                                <label class="block text-sm mb-1">Ghi chú thêm</label>
+                                                <textarea class="w-full px-3 py-2 border rounded" rows="3" placeholder="Nhập ghi chú nếu có"></textarea>
+                                            </div>
+                                            <button type="submit" class="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded">
+                                                Xác nhận đặt lịch
+                                            </button>
+                                        </form>
+                                    </div>
+                                    <script>
+                                        function showBookingForm7(){
+                                            const form = document.getElementById('bookingForm7');
+                                            if (form.classList.contains('hidden')) {
+                                                form.classList.remove('hidden');
+                                            } else {
+                                                form.classList.add('hidden');
+                                            }
+                                        }
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    function toggleDetails(id) {
+                        const details = document.getElementById(id);
+                        const icon = document.getElementById(id.replace('details', 'icon'));
+                        
+                        if (details.classList.contains('hidden')) {
+                            details.classList.remove('hidden');
+                            icon.style.transform = 'rotate(180deg)';
+                        } else {
+                            details.classList.add('hidden');
+                            icon.style.transform = 'rotate(0deg)';
+                        }
+                    }
+        </script>
+
+        <div class="w-full sm:w-1/3 lg:w-1/3 px-4 mb-8">
+            <div class="bg-white rounded-lg shadow-md p-6">
+                    <img src="ditichquocgia/denbac.jpg" alt="Đền Bác" class="w-full h-80 object-cover mb-4 rounded shadow-lg hover:shadow-xl transition-shadow duration-300">>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold text-blue-600 mb-3">Đền Bác</h3>
+                        <p class="text-gray-700 mb-4">Đền Bác được khởi công xây dựng vào ngày 19/5/1990, nhân dịp kỷ niệm 100 năm ngày sinh của Chủ tịch Hồ Chí Minh. Công trình được xây dựng với sự đóng góp của nhân dân Trà Vinh để tưởng nhớ và bày tỏ lòng biết ơn sâu sắc đối với Người. Đền được thiết kế theo kiến trúc trang nghiêm, thanh thoát, là nơi tổ chức nhiều hoạt động giáo dục truyền thống cách mạng cho thế hệ trẻ.</p>
+
+                        <div class="text-sm text-gray-600">
+                            <p><i class="fas fa-map-marker-alt mr-2"></i>Khóm 4, Phường 4, TP. Trà Vinh</p>
+                            <p><i class="far fa-calendar-alt mr-2"></i>Thành lập: 19/5/1990</p>
+                            <p><i class="fas fa-award mr-2"></i>Công nhận di tích: 23/12/2011</p>
+                        </div>
+                            <button onclick="toggleDetails('denbac-details')" class="mt-4 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full transition duration-300 flex items-center justify-center gap-2">
+                                <span>Xem chi tiết</span>
+                                <i class="fas fa-chevron-down transition-transform duration-300" id="denbac-icon"></i>
+                            </button>
+    
+                            <div id="denbac-details" class="hidden mt-4 bg-gray-50 p-4 rounded-lg transition-all duration-300">
+                                <h4 class="font-semibold text-lg mb-2">Lịch sử hình thành</h4>
+                                <p class="text-gray-700 mb-3">Đền Bác được khởi công xây dựng vào ngày 19/5/1990, nhân dịp kỷ niệm 100 năm ngày sinh của Chủ tịch Hồ Chí Minh. Công trình được xây dựng với sự đóng góp của nhân dân Trà Vinh để tưởng nhớ và bày tỏ lòng biết ơn sâu sắc đối với Người.</p>
+    
+                                <h4 class="font-semibold text-lg mb-2">Giá trị văn hóa</h4>
+                                <p class="text-gray-700 mb-3">
+                                    <ul class="list-disc ml-6">
+                                        <li>Công trình văn hóa tâm linh</li>
+                                        <li>Nơi giáo dục truyền thống</li>
+                                        <li>Điểm tổ chức lễ kỷ niệm</li>
+                                        <li>Không gian tưởng niệm</li>
+                                    </ul>
+                                </p>
+    
+                                <h4 class="font-semibold text-lg mb-2">Giá trị lịch sử</h4>
+                                <p class="text-gray-700 mb-3">
+                                    <ul class="list-disc ml-6">
+                                        <li>Di tích cấp quốc gia</li>
+                                        <li>Chứng tích lịch sử cách mạng</li>
+                                        <li>Nơi lưu giữ kỷ niệm</li>
+                                        <li>Điểm son văn hóa chính trị</li>
+                                    </ul>
+                                </p>
+    
+                                <h4 class="font-semibold text-lg mb-2">Tiện ích tham quan</h4>
+                                <div class="grid grid-cols-2 gap-4 text-gray-700">
+                                    <div>
+                                        <h5 class="font-medium mb-2">Dịch vụ</h5>
+                                        <ul class="list-disc ml-6">
+                                            <li>Hướng dẫn tham quan</li>
+                                            <li>Khu vui chơi giải trí</li>
+                                            <li>Không gian xanh mát</li>
+                                            <li>Bãi đỗ xe</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h5 class="font-medium mb-2">Thông tin hữu ích</h5>
+                                        <ul class="list-disc ml-6">
+                                            <li>Mở cửa: 6:00 - 18:00</li>
+                                            <li>Thuyết minh đa ngôn ngữ</li>
+                                            <li>Tham quan miễn phí</li>
+                                            <li>Chụp ảnh tự do</li>
+                                        </ul>
+                                    </div>
+                                </div>
+    
+                                <div class="mt-4">
+                                    <!-- Bản đồ -->
+                                    <div class="mb-4 h-64 rounded-lg overflow-hidden">
+                                        <iframe 
+                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3928.841454392438!2d106.34573661474199!3d10.033297892830387!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDAxJzU5LjkiTiAxMDbCsDIwJzQ0LjYiRQ!5e0!3m2!1svi!2s!4v1635789012345!5m2!1svi!2s"
+                                            class="w-full h-full border-0"
+                                            allowfullscreen=""
+                                            loading="lazy">
+                                        </iframe>
+                                    </div>
+    
+                                    <!-- Nút chỉ đường và đặt lịch -->
+                                    <div class="flex gap-4">
+                                        <button onclick="window.open('https://www.google.com/maps/dir//10.033297,106.345736')" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-full flex items-center gap-2">
+                                            <i class="fas fa-map-marked-alt"></i>
+                                            Chỉ đường
+                                        </button>
+                                        
+                                        <button onclick="showBookingForm8()" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-full flex items-center gap-2">
+                                            <i class="fas fa-calendar-alt"></i>
+                                            Đặt lịch tham quan
+                                        </button>
+                                    </div>
+    
+                                    <!-- Form đặt lịch -->
+                                    <div id="bookingForm8" class="hidden mt-4 p-4 bg-gray-100 rounded-lg">
+                                        <h5 class="font-medium mb-3">Đặt lịch tham quan</h5>
+                                        <form class="space-y-3" onsubmit="return false;">
+                                            <div>
+                                                <label class="block text-sm mb-1">Họ và tên</label>
+                                                <input type="text" class="w-full px-3 py-2 border rounded" placeholder="Nhập họ và tên của bạn" required>
+                                            </div>
+                                            <div>
+                                                <label class="block text-sm mb-1">Email</label>
+                                                <input type="email" class="w-full px-3 py-2 border rounded" placeholder="Nhập email của bạn" required>
+                                            </div>
+                                            <div>
+                                                <label class="block text-sm mb-1">Số điện thoại</label>
+                                                <input type="tel" class="w-full px-3 py-2 border rounded" placeholder="Nhập số điện thoại của bạn" required>
+                                            </div>
+                                            <div>
+                                                <label class="block text-sm mb-1">Ngày tham quan</label>
+                                                <input type="date" class="w-full px-3 py-2 border rounded" required>
+                                            </div>
+                                            <div>
+                                                <label class="block text-sm mb-1">Thời gian</label>
+                                                <select class="w-full px-3 py-2 border rounded" required>
+                                                    <option value="">Chọn thời gian</option>
+                                                    <option value="morning">Buổi sáng (8:00 - 11:00)</option>
+                                                    <option value="afternoon">Buổi chiều (14:00 - 17:00)</option>
+                                                </select>
+                                            </div>
+                                            <div>
+                                                <label class="block text-sm mb-1">Số người tham quan</label>
+                                                <input type="number" min="1" class="w-full px-3 py-2 border rounded" placeholder="Nhập số người tham quan" required>
+                                            </div>
+                                            <div>
+                                                <label class="block text-sm mb-1">Ghi chú thêm</label>
+                                                <textarea class="w-full px-3 py-2 border rounded" rows="3" placeholder="Nhập ghi chú nếu có"></textarea>
+                                            </div>
+                                            <button type="submit" class="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded">
+                                                Xác nhận đặt lịch
+                                            </button>
+                                        </form>
+                                    </div>
+                                    <script>
+                                        function showBookingForm8() {
+                                            const form = document.getElementById('bookingForm8');
+                                            if (form.classList.contains('hidden')) {
+                                                form.classList.remove('hidden');
+                                            } else {
+                                                form.classList.add('hidden');
+                                            }
+                                        }
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    function toggleDetails(id) {
+                        const details = document.getElementById(id);
+                        const icon = document.getElementById(id.replace('details', 'icon'));
+                        
+                        if (details.classList.contains('hidden')) {
+                            details.classList.remove('hidden');
+                            icon.style.transform = 'rotate(180deg)';
+                        } else {
+                            details.classList.add('hidden');
+                            icon.style.transform = 'rotate(0deg)';
+                        }
+                    }
+        </script>
+
+        <div class="w-full sm:w-1/3 lg:w-1/3 px-4 mb-8">
+            <div class="bg-white rounded-lg shadow-md p-6">
+                    <img src="ditichquocgia/dinhlongduc.jpg" alt="Đình Long Đức" class="w-full h-80 object-cover mb-4 rounded shadow-lg hover:shadow-xl transition-shadow duration-300">>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold text-blue-600 mb-3">Đình Long Đức</h3>
+                        <p class="text-gray-700 mb-4">Đình Long Đức được xây dựng vào thế kỷ 19, là một trong những công trình kiến trúc cổ tiêu biểu của vùng đất Trà Vinh. Đình được xây dựng theo kiến trúc truyền thống Nam Bộ với nhiều họa tiết chạm khắc tinh xảo, thể hiện tài nghệ của các nghệ nhân thời bấy giờ.</p>
+
+                        <div class="text-sm text-gray-600">
+                            <p><i class="fas fa-map-marker-alt mr-2"></i>Xã Long Đức, TP. Trà Vinh</p>
+                            <p><i class="far fa-calendar-alt mr-2"></i>Thành lập: Thế kỷ 19</p>
+                            <p><i class="fas fa-award mr-2"></i>Công nhận di tích: 16/11/2018</p>
+                        </div>
+
+                            <button onclick="toggleDetails('longduc-details')" class="mt-4 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full transition duration-300 flex items-center justify-center gap-2">
+                                <span>Xem chi tiết</span>
+                                <i class="fas fa-chevron-down transition-transform duration-300" id="longduc-icon"></i>
+                            </button>
+    
+                            <div id="longduc-details" class="hidden mt-4 bg-gray-50 p-4 rounded-lg transition-all duration-300">
+                                <h4 class="font-semibold text-lg mb-2">Lịch sử hình thành</h4>
+                                <p class="text-gray-700 mb-3">Đình Long Đức được xây dựng vào thế kỷ 19, là một trong những công trình kiến trúc cổ tiêu biểu của vùng đất Trà Vinh. Đình được xây dựng theo kiến trúc truyền thống Nam Bộ với nhiều họa tiết chạm khắc tinh xảo.</p>
+    
+                                <h4 class="font-semibold text-lg mb-2">Giá trị văn hóa</h4>
+                                <p class="text-gray-700 mb-3">
+                                    <ul class="list-disc ml-6">
+                                        <li>Trung tâm văn hóa tín ngưỡng</li>
+                                        <li>Nơi tổ chức lễ hội truyền thống</li>
+                                        <li>Điểm sinh hoạt cộng đồng</li>
+                                        <li>Công trình kiến trúc nghệ thuật</li>
+                                    </ul>
+                                </p>
+    
+                                <h4 class="font-semibold text-lg mb-2">Giá trị lịch sử</h4>
+                                <p class="text-gray-700 mb-3">
+                                    <ul class="list-disc ml-6">
+                                        <li>Di tích văn hóa cấp quốc gia</li>
+                                        <li>Chứng tích lịch sử địa phương</li>
+                                        <li>Nơi lưu giữ văn hóa truyền thống</li>
+                                        <li>Điểm son văn hóa tâm linh</li>
+                                    </ul>
+                                </p>
+    
+                                <h4 class="font-semibold text-lg mb-2">Tiện ích tham quan</h4>
+                                <div class="grid grid-cols-2 gap-4 text-gray-700">
+                                    <div>
+                                        <h5 class="font-medium mb-2">Dịch vụ</h5>
+                                        <ul class="list-disc ml-6">
+                                            <li>Hướng dẫn tham quan</li>
+                                            <li>Khu vui chơi giải trí</li>
+                                            <li>Không gian xanh mát</li>
+                                            <li>Bãi đỗ xe</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h5 class="font-medium mb-2">Thông tin hữu ích</h5>
+                                        <ul class="list-disc ml-6">
+                                            <li>Mở cửa: 6:00 - 18:00</li>
+                                            <li>Thuyết minh đa ngôn ngữ</li>
+                                            <li>Tham quan miễn phí</li>
+                                            <li>Chụp ảnh tự do</li>
+                                        </ul>
+                                    </div>
+                                </div>
+    
+                                <div class="mt-4">
+                                    <!-- Bản đồ -->
+                                    <div class="mb-4 h-64 rounded-lg overflow-hidden">
+                                        <iframe 
+                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3928.841454392438!2d106.34573661474199!3d10.033297892830387!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDAxJzU5LjkiTiAxMDbCsDIwJzQ0LjYiRQ!5e0!3m2!1svi!2s!4v1635789012345!5m2!1svi!2s"
+                                            class="w-full h-full border-0"
+                                            allowfullscreen=""
+                                            loading="lazy">
+                                        </iframe>
+                                    </div>
+    
+                                    <!-- Nút chỉ đường và đặt lịch -->
+                                    <div class="flex gap-4">
+                                        <button onclick="window.open('https://www.google.com/maps/dir//10.033297,106.345736')" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-full flex items-center gap-2">
+                                            <i class="fas fa-map-marked-alt"></i>
+                                            Chỉ đường
+                                        </button>
+                                        
+                                        <button onclick="showBookingForm9()" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-full flex items-center gap-2">
+                                            <i class="fas fa-calendar-alt"></i>
+                                            Đặt lịch tham quan
+                                        </button>
+                                    </div>
+    
+                                    <!-- Form đặt lịch -->
+                                    <div id="bookingForm9" class="hidden mt-4 p-4 bg-gray-100 rounded-lg">
+                                        <h5 class="font-medium mb-3">Đặt lịch tham quan</h5>
+                                        <form class="space-y-3" onsubmit="return false;">
+                                            <div>
+                                                <label class="block text-sm mb-1">Họ và tên</label>
+                                                <input type="text" class="w-full px-3 py-2 border rounded" placeholder="Nhập họ và tên của bạn" required>
+                                            </div>
+                                            <div>
+                                                <label class="block text-sm mb-1">Email</label>
+                                                <input type="email" class="w-full px-3 py-2 border rounded" placeholder="Nhập email của bạn" required>
+                                            </div>
+                                            <div>
+                                                <label class="block text-sm mb-1">Số điện thoại</label>
+                                                <input type="tel" class="w-full px-3 py-2 border rounded" placeholder="Nhập số điện thoại của bạn" required>
+                                            </div>
+                                            <div>
+                                                <label class="block text-sm mb-1">Ngày tham quan</label>
+                                                <input type="date" class="w-full px-3 py-2 border rounded" required>
+                                            </div>
+                                            <div>
+                                                <label class="block text-sm mb-1">Thời gian</label>
+                                                <select class="w-full px-3 py-2 border rounded" required>
+                                                    <option value="">Chọn thời gian</option>
+                                                    <option value="morning">Buổi sáng (8:00 - 11:00)</option>
+                                                    <option value="afternoon">Buổi chiều (14:00 - 17:00)</option>
+                                                </select>
+                                            </div>
+                                            <div>
+                                                <label class="block text-sm mb-1">Số người tham quan</label>
+                                                <input type="number" min="1" class="w-full px-3 py-2 border rounded" placeholder="Nhập số người tham quan" required>
+                                            </div>
+                                            <div>
+                                                <label class="block text-sm mb-1">Ghi chú thêm</label>
+                                                <textarea class="w-full px-3 py-2 border rounded" rows="3" placeholder="Nhập ghi chú nếu có"></textarea>
+                                            </div>
+                                            <button type="submit" class="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded">
+                                                Xác nhận đặt lịch
+                                            </button>
+                                        </form>
+                                    </div>
+                                    <script>
+                                        function showBookingForm9() {
+                                            const form = document.getElementById('bookingForm9');
+                                            if (form.classList.contains('hidden')) {
+                                                form.classList.remove('hidden');
+                                            } else {
+                                                form.classList.add('hidden');
+                                            }
+                                        }
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    function toggleDetails(id) {
+                        const details = document.getElementById(id);
+                        const icon = document.getElementById(id.replace('details', 'icon'));
+                        
+                        if (details.classList.contains('hidden')) {
+                            details.classList.remove('hidden');
+                            icon.style.transform = 'rotate(180deg)';
+                        } else {
+                            details.classList.add('hidden');
+                            icon.style.transform = 'rotate(0deg)';
+                        }
+                    }
+        </script>
+
+        <div class="w-full sm:w-1/3 lg:w-1/3 px-4 mb-8">
+    <div class="bg-white rounded-lg shadow-md p-6">
+                    <img src="ditichquocgia/l;angongcongau.jpg" alt="Lăng Ông Cồn Tàu" class="w-full h-80 object-cover mb-4 rounded shadow-lg hover:shadow-xl transition-shadow duration-300">>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold text-blue-600 mb-3">Lăng Ông Cồn Tàu</h3>
+                        <p class="text-gray-700 mb-4">Lăng Ông Cồn Tàu được xây dựng vào thế kỷ 19, là một di tích tín ngưỡng quan trọng của người dân vùng biển Trà Vinh. Lăng thờ Cá Ông (cá voi), được xem là vị thần biển bảo hộ cho ngư dân. Công trình được xây dựng theo kiến trúc truyền thống, mang đậm bản sắc văn hóa tín ngưỡng của cư dân vùng biển Nam Bộ.</p>
+
+                        <div class="text-sm text-gray-600">
+                            <p><i class="fas fa-map-marker-alt mr-2"></i>Xã Mỹ Long Nam, H. Cầu Ngang</p>
+                            <p><i class="far fa-calendar-alt mr-2"></i>Thành lập: Thế kỷ 19</p>
+                            <p><i class="fas fa-award mr-2"></i>Công nhận di tích: 16/11/2018</p>
+                        </div>
+
+                                <button onclick="toggleDetails('langong-details')" class="mt-4 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full transition duration-300 flex items-center justify-center gap-2">
+                                    <span>Xem chi tiết</span>
+                                    <i class="fas fa-chevron-down transition-transform duration-300" id="langong-icon"></i>
+                                </button>
+        
+                                <div id="langong-details" class="hidden mt-4 bg-gray-50 p-4 rounded-lg transition-all duration-300">
+                                    <h4 class="font-semibold text-lg mb-2">Lịch sử hình thành</h4>
+                                    <p class="text-gray-700 mb-3">Lăng Ông Cồn Tàu được xây dựng vào thế kỷ 19, là nơi thờ cúng Cá Ông - vị thần biển được ngư dân tôn kính. Lăng được xây dựng bởi cộng đồng ngư dân địa phương với mong muốn có một nơi thờ tự linh thiêng để cầu bình an trước khi ra khơi.</p>
+        
+                                    <h4 class="font-semibold text-lg mb-2">Giá trị văn hóa</h4>
+                                    <p class="text-gray-700 mb-3">
+                                        <ul class="list-disc ml-6">
+                                            <li>Trung tâm tín ngưỡng ngư dân</li>
+                                            <li>Nơi tổ chức lễ hội Nghinh Ông</li>
+                                            <li>Điểm sinh hoạt văn hóa cộng đồng</li>
+                                            <li>Di sản văn hóa biển độc đáo</li>
+                                        </ul>
+                                    </p>
+        
+                                    <h4 class="font-semibold text-lg mb-2">Giá trị lịch sử</h4>
+                                    <p class="text-gray-700 mb-3">
+                                        <ul class="list-disc ml-6">
+                                            <li>Di tích văn hóa cấp quốc gia</li>
+                                            <li>Chứng tích lịch sử ngư nghiệp</li>
+                                            <li>Nơi lưu giữ văn hóa biển</li>
+                                            <li>Điểm son văn hóa tâm linh</li>
+                                        </ul>
+                                    </p>
+        
+                                    <h4 class="font-semibold text-lg mb-2">Tiện ích tham quan</h4>
+                                    <div class="grid grid-cols-2 gap-4 text-gray-700">
+                                        <div>
+                                            <h5 class="font-medium mb-2">Dịch vụ</h5>
+                                            <ul class="list-disc ml-6">
+                                                <li>Hướng dẫn tham quan</li>
+                                                <li>Khu vui chơi giải trí</li>
+                                                <li>Không gian xanh mát</li>
+                                                <li>Bãi đỗ xe</li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <h5 class="font-medium mb-2">Thông tin hữu ích</h5>
+                                            <ul class="list-disc ml-6">
+                                                <li>Mở cửa: 6:00 - 18:00</li>
+                                                <li>Thuyết minh đa ngôn ngữ</li>
+                                                <li>Tham quan miễn phí</li>
+                                                <li>Chụp ảnh tự do</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+        
+                                    <div class="mt-4">
+                                        <!-- Bản đồ -->
+                                        <div class="mb-4 h-64 rounded-lg overflow-hidden">
+                                            <iframe 
+                                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3928.841454392438!2d106.34573661474199!3d10.033297892830387!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDAxJzU5LjkiTiAxMDbCsDIwJzQ0LjYiRQ!5e0!3m2!1svi!2s!4v1635789012345!5m2!1svi!2s"
+                                                class="w-full h-full border-0"
+                                                allowfullscreen=""
+                                                loading="lazy">
+                                            </iframe>
+                                        </div>
+        
+                                        <!-- Nút chỉ đường và đặt lịch -->
+                                        <div class="flex gap-4">
+                                            <button onclick="window.open('https://www.google.com/maps/dir//10.033297,106.345736')" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-full flex items-center gap-2">
+                                                <i class="fas fa-map-marked-alt"></i>
+                                                Chỉ đường
+                                            </button>
+                                            
+                                            <button onclick="showBookingForm10()" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-full flex items-center gap-2">
+                                                <i class="fas fa-calendar-alt"></i>
+                                                Đặt lịch tham quan
+                                            </button>
+                                        </div>
+        
+                                        <!-- Form đặt lịch -->
+                                        <div id="bookingForm10" class="hidden mt-4 p-4 bg-gray-100 rounded-lg">
+                                            <h5 class="font-medium mb-3">Đặt lịch tham quan</h5>
+                                            <form class="space-y-3" onsubmit="return false;">
+                                                <div>
+                                                    <label class="block text-sm mb-1">Họ và tên</label>
+                                                    <input type="text" class="w-full px-3 py-2 border rounded" placeholder="Nhập họ và tên của bạn" required>
+                                                </div>
+                                                <div>
+                                                    <label class="block text-sm mb-1">Email</label>
+                                                    <input type="email" class="w-full px-3 py-2 border rounded" placeholder="Nhập email của bạn" required>
+                                                </div>
+                                                <div>
+                                                    <label class="block text-sm mb-1">Số điện thoại</label>
+                                                    <input type="tel" class="w-full px-3 py-2 border rounded" placeholder="Nhập số điện thoại của bạn" required>
+                                                </div>
+                                                <div>
+                                                    <label class="block text-sm mb-1">Ngày tham quan</label>
+                                                    <input type="date" class="w-full px-3 py-2 border rounded" required>
+                                                </div>
+                                                <div>
+                                                    <label class="block text-sm mb-1">Thời gian</label>
+                                                    <select class="w-full px-3 py-2 border rounded" required>
+                                                        <option value="">Chọn thời gian</option>
+                                                        <option value="morning">Buổi sáng (8:00 - 11:00)</option>
+                                                        <option value="afternoon">Buổi chiều (14:00 - 17:00)</option>
+                                                    </select>
+                                                </div>
+                                                <div>
+                                                    <label class="block text-sm mb-1">Số người tham quan</label>
+                                                    <input type="number" min="1" class="w-full px-3 py-2 border rounded" placeholder="Nhập số người tham quan" required>
+                                                </div>
+                                                <div>
+                                                    <label class="block text-sm mb-1">Ghi chú thêm</label>
+                                                    <textarea class="w-full px-3 py-2 border rounded" rows="3" placeholder="Nhập ghi chú nếu có"></textarea>
+                                                </div>
+                                                <button type="submit" class="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded">
+                                                    Xác nhận đặt lịch
+                                                </button>
+                                            </form>
+                                        </div>
+                                        <script>
+                                            function showBookingForm10() {
+                                                const form = document.getElementById('bookingForm10');
+                                                if (form.classList.contains('hidden')) {
+                                                    form.classList.remove('hidden');
+                                                } else {
+                                                    form.classList.add('hidden');
+                                                }
+                                            }
+                                        </script>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <script>
+                        function toggleDetails(id) {
+                            const details = document.getElementById(id);
+                            const icon = document.getElementById(id.replace('details', 'icon'));
+                            
+                            if (details.classList.contains('hidden')) {
+                                details.classList.remove('hidden');
+                                icon.style.transform = 'rotate(180deg)';
+                            } else {
+                                details.classList.add('hidden');
+                                icon.style.transform = 'rotate(0deg)';
+                            }
+                        }
+            </script>
+
+            <div class="w-full sm:w-1/3 lg:w-1/3 px-4 mb-8">
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <img src="ditichquocgia/tiepnhanvukhicontau.jpg" alt="Nơi Tiếp Nhận Vũ Khí Cồn Tàu" class="w-full h-80 object-cover mb-4 rounded shadow-lg hover:shadow-xl transition-shadow duration-300">>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold text-blue-600 mb-3">Nơi Tiếp Nhận Vũ Khí Cồn Tàu</h3>
+                        <p class="text-gray-700 mb-4">Nơi Tiếp Nhận Vũ Khí Cồn Tàu là một địa điểm lịch sử quan trọng trong thời kỳ kháng chiến. Vào năm 1945, đây là điểm tiếp nhận vũ khí chiến lược của lực lượng cách mạng. Vị trí địa lý đặc biệt nằm ven biển thuận lợi cho việc bí mật vận chuyển và tiếp nhận vũ khí từ các tàu tiếp tế. Di tích này đã đóng vai trò quan trọng trong việc cung cấp vũ khí cho phong trào kháng chiến ở khu vực Nam Bộ.</p>
+
+                        <div class="text-sm text-gray-600">
+                            <p><i class="fas fa-map-marker-alt mr-2"></i>Xã Mỹ Long Nam, H. Cầu Ngang</p>
+                            <p><i class="far fa-calendar-alt mr-2"></i>Thành lập: Năm 1945</p>
+                            <p><i class="fas fa-award mr-2"></i>Công nhận di tích: 16/11/2018</p>
+                        </div>
+                            <button onclick="toggleDetails('tiepnhanvukhi-details')" class="mt-4 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full transition duration-300 flex items-center justify-center gap-2">
+                                <span>Xem chi tiết</span>
+                                <i class="fas fa-chevron-down transition-transform duration-300" id="tiepnhanvukhi-icon"></i>
+                            </button>
+    
+                            <div id="tiepnhanvukhi-details"class="hidden mt-4 bg-gray-50 p-4 rounded-lg transition-all duration-300">
+                                <h4 class="font-semibold text-lg mb-2">Lịch sử hình thành</h4>
+                                <p class="text-gray-700 mb-3">Nơi Tiếp Nhận Vũ Khí Cồn Tàu được thành lập vào năm 1945, là một địa điểm chiến lược quan trọng trong thời kỳ kháng chiến. Đây là nơi tiếp nhận và phân phối vũ khí cho các lực lượng cách mạng ở Nam Bộ.</p>
+    
+                                <h4 class="font-semibold text-lg mb-2">Giá trị văn hóa</h4>
+                                <p class="text-gray-700 mb-3">
+                                    <ul class="list-disc ml-6">
+                                        <li>Di tích lịch sử cách mạng</li>
+                                        <li>Điểm giáo dục truyền thống</li>
+                                        <li>Nơi tổ chức các hoạt động kỷ niệm</li>
+                                        <li>Địa điểm tham quan du lịch</li>
+                                    </ul>
+                                </p>
+    
+                                <h4 class="font-semibold text-lg mb-2">Giá trị lịch sử</h4>
+                                <p class="text-gray-700 mb-3">
+                                    <ul class="list-disc ml-6">
+                                        <li>Di tích cấp quốc gia</li>
+                                        <li>Chứng tích kháng chiến</li>
+                                        <li>Điểm son lịch sử cách mạng</li>
+                                        <li>Nơi ghi dấu chiến công</li>
+                                    </ul>
+                                </p>
+    
+                                <h4 class="font-semibold text-lg mb-2">Tiện ích tham quan</h4>
+                                <div class="grid grid-cols-2 gap-4 text-gray-700">
+                                    <div>
+                                        <h5 class="font-medium mb-2">Dịch vụ</h5>
+                                        <ul class="list-disc ml-6">
+                                            <li>Hướng dẫn tham quan</li>
+                                            <li>Khu vui chơi giải trí</li>
+                                            <li>Không gian xanh mát</li>
+                                            <li>Bãi đỗ xe</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h5 class="font-medium mb-2">Thông tin hữu ích</h5>
+                                        <ul class="list-disc ml-6">
+                                            <li>Mở cửa: 6:00 - 18:00</li>
+                                            <li>Thuyết minh đa ngôn ngữ</li>
+                                            <li>Tham quan miễn phí</li>
+                                            <li>Chụp ảnh tự do</li>
+                                        </ul>
+                                    </div>
+                                </div>
+    
+                                <div class="mt-4">
+                                    <!-- Bản đồ -->
+                                    <div class="mb-4 h-64 rounded-lg overflow-hidden">
+                                        <iframe 
+                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3928.841454392438!2d106.34573661474199!3d10.033297892830387!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDAxJzU5LjkiTiAxMDbCsDIwJzQ0LjYiRQ!5e0!3m2!1svi!2s!4v1635789012345!5m2!1svi!2s"
+                                            class="w-full h-full border-0"
+                                            allowfullscreen=""
+                                            loading="lazy">
+                                        </iframe>
+                                    </div>
+    
+                                    <!-- Nút chỉ đường và đặt lịch -->
+                                    <div class="flex gap-4">
+                                        <button onclick="window.open('https://www.google.com/maps/dir//10.033297,106.345736')" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-full flex items-center gap-2">
+                                            <i class="fas fa-map-marked-alt"></i>
+                                            Chỉ đường
+                                        </button>
+                                        
+                                        <button onclick="showBookingForm11()" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-full flex items-center gap-2">
+                                            <i class="fas fa-calendar-alt"></i>
+                                            Đặt lịch tham quan
+                                        </button>
+                                    </div>
+    
+                                    <!-- Form đặt lịch -->
+                                    <div id="bookingForm11" class="hidden mt-4 p-4 bg-gray-100 rounded-lg">
+                                        <h5 class="font-medium mb-3">Đặt lịch tham quan</h5>
+                                        <form class="space-y-3" onsubmit="return false;">
+                                            <div>
+                                                <label class="block text-sm mb-1">Họ và tên</label>
+                                                <input type="text" class="w-full px-3 py-2 border rounded" placeholder="Nhập họ và tên của bạn" required>
+                                            </div>
+                                            <div>
+                                                <label class="block text-sm mb-1">Email</label>
+                                                <input type="email" class="w-full px-3 py-2 border rounded" placeholder="Nhập email của bạn" required>
+                                            </div>
+                                            <div>
+                                                <label class="block text-sm mb-1">Số điện thoại</label>
+                                                <input type="tel" class="w-full px-3 py-2 border rounded" placeholder="Nhập số điện thoại của bạn" required>
+                                            </div>
+                                            <div>
+                                                <label class="block text-sm mb-1">Ngày tham quan</label>
+                                                <input type="date" class="w-full px-3 py-2 border rounded" required>
+                                            </div>
+                                            <div>
+                                                <label class="block text-sm mb-1">Thời gian</label>
+                                                <select class="w-full px-3 py-2 border rounded" required>
+                                                    <option value="">Chọn thời gian</option>
+                                                    <option value="morning">Buổi sáng (8:00 - 11:00)</option>
+                                                    <option value="afternoon">Buổi chiều (14:00 - 17:00)</option>
+                                                </select>
+                                            </div>
+                                            <div>
+                                                <label class="block text-sm mb-1">Số người tham quan</label>
+                                                <input type="number" min="1" class="w-full px-3 py-2 border rounded" placeholder="Nhập số người tham quan" required>
+                                            </div>
+                                            <div>
+                                                <label class="block text-sm mb-1">Ghi chú thêm</label>
+                                                <textarea class="w-full px-3 py-2 border rounded" rows="3" placeholder="Nhập ghi chú nếu có"></textarea>
+                                            </div>
+                                            <button type="submit" class="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded">
+                                                Xác nhận đặt lịch
+                                            </button>
+                                        </form>
+                                    </div>
+                                    <script>
+                                        function showBookingForm11() {
+                                            const form = document.getElementById('bookingForm11');
+                                            if (form.classList.contains('hidden')) {
+                                                form.classList.remove('hidden');
+                                            } else {
+                                                form.classList.add('hidden');
+                                            }
+                                        }
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    function toggleDetails(id) {
+                        const details = document.getElementById(id);
+                        const icon = document.getElementById(id.replace('details', 'icon'));
+                        
+                        if (details.classList.contains('hidden')) {
+                            details.classList.remove('hidden');
+                            icon.style.transform = 'rotate(180deg)';
+                        } else {
+                            details.classList.add('hidden');
+                            icon.style.transform = 'rotate(0deg)';
+                        }
+                    }
+        </script>
+
+        <div class="w-full sm:w-1/3 lg:w-1/3 px-4 mb-8">
+            <div class="bg-white rounded-lg shadow-md p-6">
+                    <img src="ditichquocgia/phuocminhcung.jpg" alt="Phước Minh Cung" class="w-full h-80 object-cover mb-4 rounded shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-xl font-semibold text-blue-700 mb-3">Phước Minh Cung</h3>
+                    <p class="text-gray-700 mb-4">Phước Minh Cung được xây dựng vào năm 1876 bởi cộng đồng người Hoa tại Trà Vinh. Đây là một công trình kiến trúc cổ mang đậm bản sắc văn hóa Hoa với nhiều họa tiết trang trí tinh xảo.</p>
+
+                    <div class="text-sm text-gray-600">
+                        <p><i class="fas fa-map-marker-alt mr-2"></i>Phường 1, TP. Trà Vinh</p>
+                        <p><i class="far fa-calendar-alt mr-2"></i>Thành lập: Năm 1876</p>
+                        <p><i class="fas fa-award mr-2"></i>Công nhận di tích: 16/11/2018</p>
+                    </div>
+
+                            <button onclick="toggleDetails('phuocminh-details')" class="mt-4 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full transition duration-300 flex items-center justify-center gap-2">
+                                <span>Xem chi tiết</span>
+                                <i class="fas fa-chevron-down transition-transform duration-300" id="phuocminh-icon"></i>
+                            </button>
+    
+                            <div id="phuocminh-details" class="hidden mt-4 bg-gray-50 p-4 rounded-lg transition-all duration-300">
+                                <h4 class="font-semibold text-lg mb-2">Lịch sử hình thành</h4>
+                                <p class="text-gray-700 mb-3">Phước Minh Cung được xây dựng vào năm 1876 bởi cộng đồng người Hoa tại Trà Vinh. Công trình này đã trải qua nhiều lần trùng tu nhưng vẫn giữ được nét kiến trúc nguyên bản.</p>
+    
+                                <h4 class="font-semibold text-lg mb-2">Giá trị văn hóa</h4>
+                                <p class="text-gray-700 mb-3">
+                                    <ul class="list-disc ml-6">
+                                        <li>Trung tâm văn hóa người Hoa</li>
+                                        <li>Nơi diễn ra lễ hội truyền thống</li>
+                                        <li>Điểm giao lưu văn hóa</li>
+                                        <li>Công trình kiến trúc tiêu biểu</li>
+                                    </ul>
+                                </p>
+    
+                                <h4 class="font-semibold text-lg mb-2">Giá trị lịch sử</h4>
+                                <p class="text-gray-700 mb-3">
+                                    <ul class="list-disc ml-6">
+                                        <li>Di tích văn hóa cấp quốc gia</li>
+                                        <li>Chứng tích lịch sử người Hoa</li>
+                                        <li>Nơi lưu giữ văn hóa truyền thống</li>
+                                        <li>Điểm son văn hóa tâm linh</li>
+                                    </ul>
+                                </p>
+    
+                                <h4 class="font-semibold text-lg mb-2">Tiện ích tham quan</h4>
+                                <div class="grid grid-cols-2 gap-4 text-gray-700">
+                                    <div>
+                                        <h5 class="font-medium mb-2">Dịch vụ</h5>
+                                        <ul class="list-disc ml-6">
+                                            <li>Hướng dẫn tham quan</li>
+                                            <li>Khu vui chơi giải trí</li>
+                                            <li>Không gian xanh mát</li>
+                                            <li>Bãi đỗ xe</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h5 class="font-medium mb-2">Thông tin hữu ích</h5>
+                                        <ul class="list-disc ml-6">
+                                            <li>Mở cửa: 6:00 - 18:00</li>
+                                            <li>Thuyết minh đa ngôn ngữ</li>
+                                            <li>Tham quan miễn phí</li>
+                                            <li>Chụp ảnh tự do</li>
+                                        </ul>
+                                    </div>
+                                </div>
+    
+                                <div class="mt-4">
+                                    <!-- Bản đồ -->
+                                    <div class="mb-4 h-64 rounded-lg overflow-hidden">
+                                        <iframe 
+                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3928.841454392438!2d106.34573661474199!3d10.033297892830387!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDAxJzU5LjkiTiAxMDbCsDIwJzQ0LjYiRQ!5e0!3m2!1svi!2s!4v1635789012345!5m2!1svi!2s"
+                                            class="w-full h-full border-0"
+                                            allowfullscreen=""
+                                            loading="lazy">
+                                        </iframe>
+                                    </div>
+    
+                                    <!-- Nút chỉ đường và đặt lịch -->
+                                    <div class="flex gap-4">
+                                        <button onclick="window.open('https://www.google.com/maps/dir//10.033297,106.345736')" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-full flex items-center gap-2">
+                                            <i class="fas fa-map-marked-alt"></i>
+                                            Chỉ đường
+                                        </button>
+                                        
+                                        <button onclick="showBookingForm12()" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-full flex items-center gap-2">
+                                            <i class="fas fa-calendar-alt"></i>
+                                            Đặt lịch tham quan
+                                        </button>
+                                    </div>
+    
+                                    <!-- Form đặt lịch -->
+                                    <div id="bookingForm12" class="hidden mt-4 p-4 bg-gray-100 rounded-lg">
+                                        <h5 class="font-medium mb-3">Đặt lịch tham quan</h5>
+                                        <form class="space-y-3" onsubmit="return false;">
+                                            <div>
+                                                <label class="block text-sm mb-1">Họ và tên</label>
+                                                <input type="text" class="w-full px-3 py-2 border rounded" placeholder="Nhập họ và tên của bạn" required>
+                                            </div>
+                                            <div>
+                                                <label class="block text-sm mb-1">Email</label>
+                                                <input type="email" class="w-full px-3 py-2 border rounded" placeholder="Nhập email của bạn" required>
+                                            </div>
+                                            <div>
+                                                <label class="block text-sm mb-1">Số điện thoại</label>
+                                                <input type="tel" class="w-full px-3 py-2 border rounded" placeholder="Nhập số điện thoại của bạn" required>
+                                            </div>
+                                            <div>
+                                                <label class="block text-sm mb-1">Ngày tham quan</label>
+                                                <input type="date" class="w-full px-3 py-2 border rounded" required>
+                                            </div>
+                                            <div>
+                                                <label class="block text-sm mb-1">Thời gian</label>
+                                                <select class="w-full px-3 py-2 border rounded" required>
+                                                    <option value="">Chọn thời gian</option>
+                                                    <option value="morning">Buổi sáng (8:00 - 11:00)</option>
+                                                    <option value="afternoon">Buổi chiều (14:00 - 17:00)</option>
+                                                </select>
+                                            </div>
+                                            <div>
+                                                <label class="block text-sm mb-1">Số người tham quan</label>
+                                                <input type="number" min="1" class="w-full px-3 py-2 border rounded" placeholder="Nhập số người tham quan" required>
+                                            </div>
+                                            <div>
+                                                <label class="block text-sm mb-1">Ghi chú thêm</label>
+                                                <textarea class="w-full px-3 py-2 border rounded" rows="3" placeholder="Nhập ghi chú nếu có"></textarea>
+                                            </div>
+                                            <button type="submit" class="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded">
+                                                Xác nhận đặt lịch
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <script>
+                                function showBookingForm12() {
+                                    const form = document.getElementById('bookingForm12');
+                                    if (form.classList.contains('hidden')) {
+                                        form.classList.remove('hidden');
+                                    } else {
+                                        form.classList.add('hidden');
+                                    }
+                                }
+                            </script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            function toggleDetails(id) {
+                const details = document.getElementById(id);
+                const icon = document.getElementById(id.replace('details', 'icon'));
+                
+                if (details.classList.contains('hidden')) {
+                    details.classList.remove('hidden');
+                    icon.style.transform = 'rotate(180deg)';
+                } else {
+                    details.classList.add('hidden');
+                    icon.style.transform = 'rotate(0deg)';
+                }
+            }
+</script>
+
+        <div class="w-full sm:w-1/3 lg:w-1/3 px-4 mb-8">
+            <div class="bg-white rounded-lg shadow-md p-6">
+                    <img src="ditichquocgia/luucu2.jpg" alt="Lưu Cừ 2" class="w-full h-80 object-cover mb-4 rounded shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold text-blue-600 mb-3">Lưu Cừ 2</h3>
+                        <p class="text-gray-700 mb-4">Di tích khảo cổ học Lưu Cừ 2 là một trong những di tích quan trọng của nền văn hóa Óc Eo tại Trà Vinh. Khu di tích này được phát hiện qua các đợt khai quật khảo cổ học, cung cấp nhiều hiện vật quý giá.</p>
+
+                        <div class="text-sm text-gray-600">
+                            <p><i class="fas fa-map-marker-alt mr-2"></i>Xã Lưu Nghiệp Anh, H. Trà Cú</p>
+                            <p><i class="far fa-calendar-alt mr-2"></i>Thành lập: Thế kỷ 1-7</p>
+                            <p><i class="fas fa-award mr-2"></i>Công nhận di tích: 16/11/2018</p>
+                        </div>
+
+                            <button onclick="toggleDetails('luucu2-details')" class="mt-4 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full transition duration-300 flex items-center justify-center gap-2">
+                                <span>Xem chi tiết</span>
+                                <i class="fas fa-chevron-down transition-transform duration-300" id="luucu2-icon"></i>
+                            </button>
+    
+                            <div id="luucu2-details"class="hidden mt-4 bg-gray-50 p-4 rounded-lg transition-all duration-300">
+                                <h4 class="font-semibold text-lg mb-2">Lịch sử hình thành</h4>
+                                <p class="text-gray-700 mb-3">Di tích khảo cổ học Lưu Cừ 2 được phát hiện qua các đợt khai quật từ thế kỷ I đến thế kỷ VII sau Công nguyên. Đây là một trong những di tích quan trọng của nền văn hóa Óc Eo tại Trà Vinh.</p>
+    
+                                <h4 class="font-semibold text-lg mb-2">Giá trị văn hóa</h4>
+                                <p class="text-gray-700 mb-3">
+                                    <ul class="list-disc ml-6">
+                                        <li>Di tích văn hóa Óc Eo</li>
+                                        <li>Khu định cư cổ</li>
+                                        <li>Nơi lưu giữ hiện vật quý</li>
+                                        <li>Điểm nghiên cứu khảo cổ</li>
+                                    </ul>
+                                </p>
+    
+                                <h4 class="font-semibold text-lg mb-2">Giá trị lịch sử</h4>
+                                <p class="text-gray-700 mb-3">
+                                    <ul class="list-disc ml-6">
+                                        <li>Di tích khảo cổ cấp quốc gia</li>
+                                        <li>Chứng tích văn hóa Óc Eo</li>
+                                        <li>Nơi lưu giữ di vật cổ</li>
+                                        <li>Điểm son lịch sử địa phương</li>
+                                    </ul>
+                                </p>
+    
+                                <h4 class="font-semibold text-lg mb-2">Tiện ích tham quan</h4>
+                                <div class="grid grid-cols-2 gap-4 text-gray-700">
+                                    <div>
+                                        <h5 class="font-medium mb-2">Dịch vụ</h5>
+                                        <ul class="list-disc ml-6">
+                                            <li>Hướng dẫn tham quan</li>
+                                            <li>Khu trưng bày hiện vật</li>
+                                            <li>Không gian nghiên cứu</li>
+                                            <li>Bãi đỗ xe</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h5 class="font-medium mb-2">Thông tin hữu ích</h5>
+                                        <ul class="list-disc ml-6">
+                                            <li>Mở cửa: 7:00 - 17:00</li>
+                                            <li>Thuyết minh chuyên môn</li>
+                                            <li>Tham quan có phí</li>
+                                            <li>Chụp ảnh có giới hạn</li>
+                                        </ul>
+                                    </div>
+                                </div>
+    
+                                <div class="mt-4">
+                                    <!-- Bản đồ -->
+                                    <div class="mb-4 h-64 rounded-lg overflow-hidden">
+                                        <iframe 
+                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3928.841454392438!2d106.34573661474199!3d10.033297892830387!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDAxJzU5LjkiTiAxMDbCsDIwJzQ0LjYiRQ!5e0!3m2!1svi!2s!4v1635789012345!5m2!1svi!2s"
+                                            class="w-full h-full border-0"
+                                            allowfullscreen=""
+                                            loading="lazy">
+                                        </iframe>
+                                    </div>
+    
+                                    <!-- Nút chỉ đường và đặt lịch -->
+                                    <div class="flex gap-4">
+                                        <button onclick="window.open('https://www.google.com/maps/dir//10.033297,106.345736')" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-full flex items-center gap-2">
+                                            <i class="fas fa-map-marked-alt"></i>
+                                            Chỉ đường
+                                        </button>
+                                        
+                                        <button onclick="showBookingForm13()" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-full flex items-center gap-2">
+                                            <i class="fas fa-calendar-alt"></i>
+                                            Đặt lịch tham quan
+                                        </button>
+                                    </div>
+    
+                                    <!-- Form đặt lịch -->
+                                    <div id="bookingForm13" class="hidden mt-4 p-4 bg-gray-100 rounded-lg">
+                                        <h5 class="font-medium mb-3">Đặt lịch tham quan</h5>
+                                        <form class="space-y-3" onsubmit="return false;">
+                                            <div>
+                                                <label class="block text-sm mb-1">Họ và tên</label>
+                                                <input type="text" class="w-full px-3 py-2 border rounded" placeholder="Nhập họ và tên của bạn" required>
+                                            </div>
+                                            <div>
+                                                <label class="block text-sm mb-1">Email</label>
+                                                <input type="email" class="w-full px-3 py-2 border rounded" placeholder="Nhập email của bạn" required>
+                                            </div>
+                                            <div>
+                                                <label class="block text-sm mb-1">Số điện thoại</label>
+                                                <input type="tel" class="w-full px-3 py-2 border rounded" placeholder="Nhập số điện thoại của bạn" required>
+                                            </div>
+                                            <div>
+                                                <label class="block text-sm mb-1">Ngày tham quan</label>
+                                                <input type="date" class="w-full px-3 py-2 border rounded" required>
+                                            </div>
+                                            <div>
+                                                <label class="block text-sm mb-1">Thời gian</label>
+                                                <select class="w-full px-3 py-2 border rounded" required>
+                                                    <option value="">Chọn thời gian</option>
+                                                    <option value="morning">Buổi sáng (8:00 - 11:00)</option>
+                                                    <option value="afternoon">Buổi chiều (14:00 - 17:00)</option>
+                                                </select>
+                                            </div>
+                                            <div>
+                                                <label class="block text-sm mb-1">Số người tham quan</label>
+                                                <input type="number" min="1" class="w-full px-3 py-2 border rounded" placeholder="Nhập số người tham quan" required>
+                                            </div>
+                                            <div>
+                                                <label class="block text-sm mb-1">Ghi chú thêm</label>
+                                                <textarea class="w-full px-3 py-2 border rounded" rows="3" placeholder="Nhập ghi chú nếu có"></textarea>
+                                            </div>
+                                            <button type="submit" class="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded">
+                                                Xác nhận đặt lịch
+                                            </button>
+                                        </form>
+                                    </div>
+                                    <script>
+                                        function showBookingForm13() {
+                                            const form = document.getElementById('bookingForm13');
+                                            if (form.classList.contains('hidden')) {
+                                                form.classList.remove('hidden');
+                                            } else {
+                                                form.classList.add('hidden');
+                                            }
+                                        }
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    function toggleDetails(id) {
+                        const details = document.getElementById(id);
+                        const icon = document.getElementById(id.replace('details', 'icon'));
+                        
+                        if (details.classList.contains('hidden')) {
+                            details.classList.remove('hidden');
+                            icon.style.transform = 'rotate(180deg)';
+                        } else {
+                            details.classList.add('hidden');
+                            icon.style.transform = 'rotate(0deg)';
+                        }
+                    }
+        </script>
+         <!-- Cột phải chứa phản hồi và giá trị di sản -->
+    <div class="flex gap-4">
+        <!-- Phần phản hồi -->
+        <div class="w-1/2">
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h3 class="text-2xl font-semibold text-blue-700 mb-4">Phản hồi từ du khách</h3>
+                
+                <!-- Phản hồi 1 -->
+                <div class="mb-6 border-b pb-4">
+                    <div class="flex items-center mb-2">
+                        <img src="avatar1.jpg" alt="Avatar" class="w-12 h-12 rounded-full mr-3">
+                        <div>
+                            <h4 class="font-medium text-lg">Nguyễn Văn An</h4>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-lg">"Chùa Âng là một công trình kiến trúc tuyệt đẹp. Không gian thanh tịnh, trang nghiêm. Rất thích hợp cho việc tham quan và chiêm bái."</p>
+                    <p class="text-sm text-gray-500 mt-1">Đã ghé thăm: 22/03/2024</p>
+                </div>
+
+                <!-- Phản hồi 2 -->
+                <div class="mb-6 border-b pb-4">
+                    <div class="flex items-center mb-2">
+                        <img src="avatar2.jpg" alt="Avatar" class="w-12 h-12 rounded-full mr-3">
+                        <div>
+                            <h4 class="font-medium text-lg">Lê Thị Bình</h4>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-lg">"Chùa Kompong thể hiện nét văn hóa đặc sắc của người Khmer. Kiến trúc độc đáo, các họa tiết chạm khắc tinh xảo."</p>
+                    <p class="text-sm text-gray-500 mt-1">Đã ghé thăm: 19/03/2024</p>
+                </div>
+
+                <!-- Phản hồi 3 -->
+                <div class="mb-6 border-b pb-4">
+                    <div class="flex items-center mb-2">
+                        <img src="avatar3.jpg" alt="Avatar" class="w-12 h-12 rounded-full mr-3">
+                        <div>
+                            <h4 class="font-medium text-lg">Trần Văn Cường</h4>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-lg">"Văn Thánh Miếu là nơi lưu giữ nhiều giá trị lịch sử, văn hóa quý báu. Cảnh quan được bảo tồn rất tốt."</p>
+                    <p class="text-sm text-gray-500 mt-1">Đã ghé thăm: 16/03/2024</p>
+                </div>
+
+                <!-- Form gửi phản hồi -->
+                <div class="mt-6">
+                    <h4 class="font-medium text-xl mb-3">Chia sẻ trải nghiệm của bạn</h4>
+                    <form class="space-y-4">
+                        <div>
+                            <label class="block text-lg mb-1">Đánh giá của bạn</label>
+                            <div class="flex text-gray-400 text-2xl">
+                                <i class="fas fa-star cursor-pointer hover:text-yellow-400"></i>
+                                <i class="fas fa-star cursor-pointer hover:text-yellow-400"></i>
+                                <i class="fas fa-star cursor-pointer hover:text-yellow-400"></i>
+                                <i class="fas fa-star cursor-pointer hover:text-yellow-400"></i>
+                                <i class="fas fa-star cursor-pointer hover:text-yellow-400"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-lg mb-1">Nhận xét</label>
+                            <textarea class="w-full px-3 py-2 border rounded text-lg" rows="3" placeholder="Chia sẻ trải nghiệm của bạn về các di tích lịch sử..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-blue-500 hover:bg-blue-600 text-white py-3 rounded text-lg">
+                            Gửi phản hồi
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Phần giá trị di sản -->
+        <div class="w-1/2">
+            <div class="bg-white rounded-xl shadow-lg p-8">
+                <h3 class="text-3xl font-bold text-blue-800 mb-6">Giá trị di sản văn hóa Trà Vinh(Di tích cấp quốc gia)</h3>
+                <p class="text-gray-700 mb-6 leading-relaxed">
+                    Di tích cấp quốc gia tại Trà Vinh là minh chứng cho sự đa dạng và phong phú trong di sản văn hóa - lịch sử của vùng đất này. Bao gồm nhiều loại hình khác nhau, từ chùa chiền, đình miếu đến các công trình kiến trúc và địa điểm lịch sử, mỗi di tích đều mang trong mình những giá trị độc đáo:
+                </p>
+                <ul class="list-disc list-inside text-gray-700 mb-6 space-y-2">
+                    <li>Giá trị lịch sử: Ghi dấu những sự kiện, nhân vật quan trọng trong lịch sử địa phương và đất nước.</li>
+                    <li>Giá trị văn hóa: Thể hiện bản sắc văn hóa đặc trưng của các dân tộc sinh sống tại Trà Vinh.</li>
+                    <li>Giá trị kiến trúc - nghệ thuật: Mang đến những công trình với kiến trúc độc đáo, tinh xảo.</li>
+                    <li>Giá trị giáo dục: Là nguồn tài liệu quý giá để giáo dục truyền thống cho thế hệ trẻ.</li>
+                    <li>Giá trị du lịch: Thu hút khách tham quan trong và ngoài nước.</li>
+                    <li>Giá trị tâm linh: Là nơi sinh hoạt tín ngưỡng của cộng đồng các dân tộc.</li>
+                    <li>Giá trị nghệ thuật: Thể hiện những kỹ thuật nghệ thuật đặc trưng của các dân tộc.</li>
+                    
+                </ul>
+                <p class="text-gray-700 leading-relaxed">
+                    Việc bảo tồn và phát huy giá trị của các di tích này không chỉ góp phần gìn giữ bản sắc văn hóa dân tộc mà còn tạo nên sức hấp dẫn đặc biệt cho du lịch Trà Vinh, mở ra cơ hội phát triển kinh tế - xã hội bền vững cho địa phương.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Xử lý đánh giá sao
+        const stars = document.querySelectorAll('.fa-star');
+        stars.forEach((star, index) => {
+            star.addEventListener('click', () => {
+                stars.forEach((s, i) => {
+                    if (i <= index) {
+                        s.classList.add('text-yellow-400');
+                    } else {
+                        s.classList.remove('text-yellow-400');
+                    }
+                });
+            });
+        });
+    </script>
+        <div class="mt-12">
+            <div class="text-center mb-8">
+                <button onclick="toggleMap()" class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-emerald-500 to-teal-700 text-white rounded-full hover:from-emerald-600 hover:to-teal-800 transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:-translate-y-1">
+                    <span class="text-xl font-bold">Khám Phá Bản Đồ Trà Vinh</span>
+                    <i class="fas fa-map-marked-alt ml-3 text-xl"></i>
+                </button>
+            </div>
+        
+            <div id="mapContent" class="hidden transform transition-all duration-500">
+                <div class="bg-white rounded-2xl shadow-2xl p-8 border border-gray-100">
+                    <div class="flex flex-col lg:flex-row gap-8">
+                        <!-- Bản đồ Google Maps -->
+                        <div class="w-full lg:w-2/3">
+                            <div class="relative h-[600px] rounded-xl overflow-hidden shadow-lg">
+                                <iframe 
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d251166.61001399535!2d106.17651544663576!3d9.812727推荐99999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31a017515cc705df%3A0xade5b5649cd70f79!2zVHLDoCBWaW5oLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1680123456789!5m2!1svi!2s"
+                                    width="100%" 
+                                    height="100%" 
+                                    style="border:0;" 
+                                    allowfullscreen="" 
+                                    loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade"
+                                    class="rounded-xl">
+                                </iframe>
+                            </div>
+                        </div>
+        
+                        <!-- Thông tin địa lý -->
+                        <div class="w-full lg:w-1/3">
+                            <h3 class="text-2xl font-bold text-emerald-800 mb-6">Thông Tin Địa Lý</h3>
+                            <div class="space-y-6 text-gray-700">
+                                <div class="flex items-start transform hover:scale-105 transition-transform duration-300">
+                                    <i class="fas fa-map-marker-alt mt-1 text-red-500 w-8 text-xl"></i>
+                                    <p class="ml-3"><span class="font-bold text-gray-800">Vị trí:</span><br>Nằm ở hạ lưu sông Tiền và sông Hậu, giáp biển Đông</p>
+                                </div>
+                                <div class="flex items-start transform hover:scale-105 transition-transform duration-300">
+                                    <i class="fas fa-expand-arrows-alt mt-1 text-blue-500 w-8 text-xl"></i>
+                                    <p class="ml-3"><span class="font-bold text-gray-800">Diện tích:</span><br>2.288,09 km²</p>
+                                </div>
+                                <div class="flex items-start transform hover:scale-105 transition-transform duration-300">
+                                    <i class="fas fa-users mt-1 text-emerald-500 w-8 text-xl"></i>
+                                    <p class="ml-3"><span class="font-bold text-gray-800">Dân số:</span><br>Khoảng 1 triệu người</p>
+                                </div>
+                                <div class="flex items-start transform hover:scale-105 transition-transform duration-300">
+                                    <i class="fas fa-border-all mt-1 text-purple-500 w-8 text-xl"></i>
+                                    <p class="ml-3"><span class="font-bold text-gray-800">Đơn vị hành chính:</span><br>1 thành phố và 7 huyện</p>
+                                </div>
+                                <div class="flex items-start transform hover:scale-105 transition-transform duration-300">
+                                    <i class="fas fa-mountain mt-1 text-yellow-600 w-8 text-xl"></i>
+                                    <p class="ml-3"><span class="font-bold text-gray-800">Địa hình:</span><br>Đồng bằng ven biển, nhiều sông rạch</p>
+                                </div>
+                                <div class="flex items-start transform hover:scale-105 transition-transform duration-300">
+                                    <i class="fas fa-temperature-high mt-1 text-orange-500 w-8 text-xl"></i>
+                                    <p class="ml-3"><span class="font-bold text-gray-800">Khí hậu:</span><br>Nhiệt đới gió mùa, nóng ẩm quanh năm</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <script>
+        function toggleMap() {
+            const mapContent = document.getElementById('mapContent');
+            if (mapContent.classList.contains('hidden')) {
+                mapContent.classList.remove('hidden');
+                mapContent.classList.add('opacity-0');
+                setTimeout(() => {
+                    mapContent.classList.remove('opacity-0');
+                    mapContent.classList.add('opacity-100');
+                }, 50);
+            } else {
+                mapContent.classList.add('opacity-0');
+                setTimeout(() => {
+                    mapContent.classList.add('hidden');
+                    mapContent.classList.remove('opacity-100');
+                }, 300);
+            }
+        }
+        </script>
+
+        <footer class="bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-white mt-16 py-12 w-full">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                    <div class="transform hover:scale-105 transition-transform duration-300">
+                        <h4 class="text-xl font-bold mb-6 border-b-2 border-emerald-500 pb-2 inline-block">Liên Hệ</h4>
+                        <div class="space-y-4">
+                            <p class="flex items-center">
+                                <i class="far fa-envelope mr-3 text-emerald-400"></i>
+                                110122115@st.tvu.edu.vn
+                            </p>
+                            <p class="flex items-center">
+                                <i class="fas fa-phone-alt mr-3 text-emerald-400"></i>
+                                0366058110
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="transform hover:scale-105 transition-transform duration-300">
+                        <h4 class="text-xl font-bold mb-6 border-b-2 border-emerald-500 pb-2 inline-block">Theo Dõi Chúng Tôi</h4>
+                        <div class="flex space-x-6">
+                            <a href="https://www.facebook.com/TraVinhUniversity.TVU?mibextid=JRoKGi" target="_blank" 
+                               class="text-gray-300 hover:text-blue-500 transition-colors duration-300">
+                                <i class="fab fa-facebook-square text-3xl"></i>
+                            </a>
+                            <a href="https://www.instagram.com/explore/locations/1017118742/truong-ai-hoc-tra-vinh/" target="_blank"
+                               class="text-gray-300 hover:text-pink-500 transition-colors duration-300">
+                                <i class="fab fa-instagram text-3xl"></i>
+                            </a>
+                            <a href="https://youtube.com/@aihoctravinhtvu?si=Mky1izWZ7pXRA9Hs" target="_blank"
+                               class="text-gray-300 hover:text-red-500 transition-colors duration-300">
+                                <i class="fab fa-youtube text-3xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="transform hover:scale-105 transition-transform duration-300">
+                        <h4 class="text-xl font-bold mb-6 border-b-2 border-emerald-500 pb-2 inline-block">Địa Chỉ</h4>
+                        <p class="flex items-center">
+                            <i class="fas fa-map-marker-alt mr-3 text-emerald-400"></i>
+                            ấp Trà Sất C, Long Hiệp, Trà Cú, Trà Vinh
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="mt-12 pt-8 border-t border-gray-700 text-center">
+                    <p class="text-gray-400">&copy; 2024 Di Tích Trà Vinh. Tất cả quyền được bảo lưu.</p>
+                </div>
+            </div>
+        </footer>
+</body>
+</html>
